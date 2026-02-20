@@ -66,6 +66,9 @@ namespace Controllers
             }
         }
 
-
+        class Day
+        {
+            
+        }
     }
 }

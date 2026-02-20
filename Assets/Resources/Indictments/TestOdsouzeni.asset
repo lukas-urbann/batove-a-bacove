@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
-  m_Name: DialogueSentence
+  m_Name: TestOdsouzeni
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: '{arg0} bez {arg1}'
+  text: '{arg0} bez {arg1} ... {arg}'
   FillerWordsList:
   - possibleFillTags:
     - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
