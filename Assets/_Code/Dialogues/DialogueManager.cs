@@ -17,8 +17,5 @@ namespace Dialogues
                 Instance = this;
             }
         }
-
-    
-    
     }
 }
