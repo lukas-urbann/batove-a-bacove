@@ -15,9 +15,10 @@ public class GavelInteractable : DraggableBase
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Collider2D validZone;
     [SerializeField] private Color invalidColor = new Color(1f, 0.3f, 0.3f);
+    [SerializeField] private Color validColor = new Color(0.3f, 1f, 0f);
     [SerializeField] private PaperInteractable paper;
 
-    [SerializeField] private AudioClip smashSound;
+    //[SerializeField] private AudioClip smashSound;
 
     private bool _isSmashed;
     private float _previousY;
@@ -109,7 +110,7 @@ public class GavelInteractable : DraggableBase
         if (!GameState.Instance.CanGavel())
             Renderer.color = OriginalColor * invalidColor;
         else
-            Renderer.color = OriginalColor * hoverDarken;
+            Renderer.color = OriginalColor * validColor;
     }
 
     protected override void OnHoverExit()

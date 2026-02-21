@@ -109,27 +109,6 @@ namespace Controllers
             StartCoroutine(FirstJudgedTimeout());
         }
 
-        private void Update()
-        {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                AdvanceDay();
-                return;
-            }
-            
-            if (Keyboard.current.hKey.wasPressedThisFrame)
-            {
-                JudgeResponse(true);
-                AfterJudging();
-            }
-            
-            if (Keyboard.current.kKey.wasPressedThisFrame)
-            {
-                JudgeResponse(false);
-                AfterJudging();
-            }
-        }
-        
         private void AfterJudging()
         {
             onJudgedDismissed?.Invoke();
@@ -146,11 +125,12 @@ namespace Controllers
             _currentBiasCase = d.Bias;
         }
 
-        private void JudgeResponse(bool forConviction)
+        public void JudgeResponse(bool forConviction)
         {
             PoorPeopleHappiness += forConviction ? -_currentBiasCase.poor : _currentBiasCase.poor;
             RichPeopleHappiness += forConviction ? -_currentBiasCase.rich : _currentBiasCase.rich;
             Debug.Log($"Judged for {(forConviction ? "conviction" : "dismissal")}. Poor happiness: {PoorPeopleHappiness}, Rich happiness: {RichPeopleHappiness}");
+            AfterJudging();
         }
         
         //Timed

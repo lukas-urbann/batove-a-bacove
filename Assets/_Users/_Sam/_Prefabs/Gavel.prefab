@@ -147,7 +147,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6057928114701069326, guid: 90f916f36fc922f44adeaa829ca80c8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -183,4 +183,3 @@ MonoBehaviour:
   validZone: {fileID: 0}
   invalidColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   paper: {fileID: 0}
-  smashSound: {fileID: 0}

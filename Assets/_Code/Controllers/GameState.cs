@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 
 public class GameState : MonoBehaviour
@@ -44,6 +45,7 @@ public class GameState : MonoBehaviour
 
     public void FinalizeDecision()
     {
+        GameManager.Instance.JudgeResponse(CurrentDecision == Decision.Right);
         ClearAll();
     }
 }
