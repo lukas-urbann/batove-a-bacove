@@ -11,6 +11,7 @@ public class GavelInteractable : DraggableBase
     [SerializeField] private float shakeDuration = 0.4f;
     [SerializeField] private float shakeMagnitude = 0.3f;
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private Collider2D validZone;
 
     private bool _isSmashed;
     private float _previousY;
@@ -26,13 +27,18 @@ public class GavelInteractable : DraggableBase
             float distance = _dragStartY - transform.position.y;
             _previousY = transform.position.y;
 
-            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance)
+            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance && IsInValidZone())
             {
                 _isSmashed = true;
                 transform.rotation = Quaternion.Euler(0, 0, smashAngle);
                 OnSmash();
             }
         }
+    }
+    
+    private bool IsInValidZone()
+    {
+        return validZone.OverlapPoint(transform.position);
     }
 
     protected override void OnDragStart()
