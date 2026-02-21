@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class QuillInteractable : MonoBehaviour
+public class QuillInteractable : DraggableBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void OnSign(Vector3 position)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log($"Signed at: {position}");
     }
 }
