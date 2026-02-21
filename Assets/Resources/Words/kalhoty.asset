@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: kalhoty
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueFillWord
   Weight:
-    weight: 0
+    weight: 0.7
   Tags:
   - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
