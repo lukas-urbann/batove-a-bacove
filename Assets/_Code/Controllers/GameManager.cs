@@ -22,7 +22,7 @@ namespace Controllers
         
         [Header("Timers")]
         [SerializeField] private float daySwitchTime = 4;
-        [SerializeField] private float workDayTime = 10;
+        [SerializeField] private float workDayTime = 90;
         [SerializeField] private float responseTime = 2.5f;
         [SerializeField] private float noJudgedTimeout = 2f;
 
@@ -117,13 +117,13 @@ namespace Controllers
                 return;
             }
             
-            if (Keyboard.current.hKey.isPressed)
+            if (Keyboard.current.hKey.wasPressedThisFrame)
             {
                 JudgeResponse(true);
                 AfterJudging();
             }
             
-            if (Keyboard.current.kKey.isPressed)
+            if (Keyboard.current.kKey.wasPressedThisFrame)
             {
                 JudgeResponse(false);
                 AfterJudging();

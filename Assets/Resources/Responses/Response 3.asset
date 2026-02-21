@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Response 3
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "P\u0159izn\xE1v\xE1m se... no a co jako. A co jako. BYLO SNAD DESET?"
-  FillerWordsList:
-  - possibleFillTags:
-    - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
+  text: "P\u0159izn\xE1v\xE1m se... no a co jako. A co jako. CO JAKO?"
+  FillerWordsList: []
   Biases:
     poor: 0.1
     rich: 0.1

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
-  m_Name: Response 2
+  m_Name: Response 4
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "To jsem nebyl j\xE1, to byl ten \u017Eebr\xE1k z ulice!"
+  text: "... mo\u017En\xE1?"
   FillerWordsList: []
   Biases:
-    poor: -0.2
+    poor: 0
     rich: 0
