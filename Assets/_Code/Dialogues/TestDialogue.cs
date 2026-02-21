@@ -6,6 +6,6 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
-        typeEffect.StartTyping("Your honor, the imposter is sus.");
+        typeEffect.StartTyping("Test scrolling text.");
     }
 }

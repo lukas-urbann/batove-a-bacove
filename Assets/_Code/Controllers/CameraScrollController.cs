@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
-public class CameraScroll : MonoBehaviour
+public class CameraScrollController : MonoBehaviour
 {
     public float panSpeed = 5f;
     public float edgeThreshold = 25f;
@@ -10,11 +11,18 @@ public class CameraScroll : MonoBehaviour
 
     void Update()
     {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
         Vector3 pos = transform.position;
         float mouseX = Mouse.current.position.ReadValue().x;
         float screenWidth = Screen.width;
-        if (mouseX <= edgeThreshold) pos.x -= panSpeed * Time.deltaTime;
-        if (mouseX >= screenWidth - edgeThreshold) pos.x += panSpeed * Time.deltaTime;
+        
+        if (mouseX <= edgeThreshold) 
+            pos.x -= panSpeed * Time.deltaTime;
+        if (mouseX >= screenWidth - edgeThreshold) 
+            pos.x += panSpeed * Time.deltaTime;
+        
         pos.x = Mathf.Clamp(pos.x, leftLimit, rightLimit);
         transform.position = pos;
     }
