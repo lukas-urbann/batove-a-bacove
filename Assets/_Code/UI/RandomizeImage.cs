@@ -1,16 +1,23 @@
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-public class RandomizeImage : MonoBehaviour
+namespace UI
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class RandomizeImage : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private Image image;
+        [SerializeField] private Sprite[] sprites;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            Randomize();
+        }
+
+        private void Randomize()
+        {
+            image.sprite = sprites[Random.Range(0, sprites.Length)];
+        }
     }
 }
+

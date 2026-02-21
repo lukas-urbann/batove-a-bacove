@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: pijan
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueFillWord
   Weight:
-    weight: 0.6
+    weight: 0.3
   Tags:
-  - {fileID: 11400000, guid: d9d55f9ea1b300d498202439054b7bc9, type: 2}
+  - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}

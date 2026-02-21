@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: TestOdsouzeni 3
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: Bohaty:2
+  text: "Byl vid\u011Bn jak okradl \u017Eebr\xE1ka o gro\u0161!"
   FillerWordsList: []
   Biases:
-    poor: 0.14
-    rich: -0.25
+    poor: -0.4
+    rich: 0

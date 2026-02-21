@@ -22,9 +22,9 @@ namespace Controllers
         
         [Header("Timers")]
         [SerializeField] private float daySwitchTime = 4;
-        [SerializeField] private float workDayTime = 60;
+        [SerializeField] private float workDayTime = 10;
         [SerializeField] private float responseTime = 2.5f;
-        [SerializeField] private float noJudgedTimeoff = 2f;
+        [SerializeField] private float noJudgedTimeout = 2f;
 
         [Header("Limits")]
         [SerializeField] private float minHappinessClamp = 0;
@@ -52,7 +52,8 @@ namespace Controllers
         }
         
         private float _richPeopleHappiness;
-        public float RichPeopleHappiness
+
+        private float RichPeopleHappiness
         {
             get => _richPeopleHappiness;
             set
@@ -74,7 +75,10 @@ namespace Controllers
 
         public DialogueWriter sentenceWriter;
         public DialogueWriter responseWriter;
-        private DialogueBias currentBiasCase = null;
+        private DialogueBias _currentBiasCase = null;
+
+        //jen pro vizual, problikava to tam pri startu
+        public GameObject hiddenPanelFirstStart;
 
         public UnityEvent onJudgedReady;
         public UnityEvent onJudgedDismissed;
@@ -91,23 +95,18 @@ namespace Controllers
             }
         }
 
-        private IEnumerator NewDayTimeoff()
-        {
-            RemoveJudged();
-            yield return new WaitForSeconds(daySwitchTime);
-            CreateNewJudged();
-        }
-        
         //jen jednou po vstupu do game sceny
         private void Start()
         {
             AdvanceDay();
+            StartCoroutine(HidePanelFirstStart());
         }
 
         private void AdvanceDay()
         {
             DayManager.Instance.IncreaseDay();
-            StartCoroutine(NewDayTimeoff());
+            onJudgedDismissed?.Invoke();
+            StartCoroutine(FirstJudgedTimeout());
         }
 
         private void Update()
@@ -115,68 +114,75 @@ namespace Controllers
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 AdvanceDay();
+                return;
             }
             
             if (Keyboard.current.hKey.isPressed)
             {
                 JudgeResponse(true);
-                onJudgedDismissed?.Invoke();
-                StartCoroutine(NoJudgedTimer());
+                AfterJudging();
             }
             
             if (Keyboard.current.kKey.isPressed)
             {
                 JudgeResponse(false);
-                onJudgedDismissed?.Invoke();
-                StartCoroutine(NoJudgedTimer());
+                AfterJudging();
             }
         }
         
-        private IEnumerator NoJudgedTimer()
+        private void AfterJudging()
         {
-            yield return new WaitForSeconds(noJudgedTimeoff);
-            CreateNewJudged();
+            onJudgedDismissed?.Invoke();
+            StartCoroutine(NoJudgedTimer());
         }
 
-        public void CreateNewJudged()
+        private void CreateNewJudged()
         {
-            //random judged type
             var judgedType = (JudgedType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(JudgedType)).Length);
             var d = DialogueManager.Instance.CreateNewDialogue(judgedType);
             onJudgedReady?.Invoke();
             sentenceWriter.WriteSentence(d.Excerpt.Item1);
             StartCoroutine(ResponseWriteDelay(d.Response.text));
-            currentBiasCase = d.Bias;
+            _currentBiasCase = d.Bias;
         }
 
+        private void JudgeResponse(bool forConviction)
+        {
+            PoorPeopleHappiness += forConviction ? -_currentBiasCase.poor : _currentBiasCase.poor;
+            RichPeopleHappiness += forConviction ? -_currentBiasCase.rich : _currentBiasCase.rich;
+            Debug.Log($"Judged for {(forConviction ? "conviction" : "dismissal")}. Poor happiness: {PoorPeopleHappiness}, Rich happiness: {RichPeopleHappiness}");
+        }
+        
+        //Timed
+        private IEnumerator FirstJudgedTimeout()
+        {
+            yield return new WaitForSeconds(daySwitchTime);
+            StartCoroutine(InGameDayTimer());
+            CreateNewJudged();
+        }
+
+        private IEnumerator InGameDayTimer()
+        {
+            yield return new WaitForSeconds(workDayTime);
+            AdvanceDay();
+        }
+        
+        private IEnumerator HidePanelFirstStart()
+        {
+            yield return new WaitForSeconds(1.2f);
+            hiddenPanelFirstStart.SetActive(false);
+        }
+        
+        private IEnumerator NoJudgedTimer()
+        {
+            yield return new WaitForSeconds(noJudgedTimeout);
+            CreateNewJudged();
+        }
+        
         private IEnumerator ResponseWriteDelay(string response)
         {
             yield return new WaitForSeconds(responseTime);
             responseWriter.WriteSentence(response);
-        }
-        
-        public void RemoveJudged()
-        {
-            onJudgedDismissed?.Invoke();
-        }
-        
-        public void JudgeResponse(bool forConviction)
-        {
-            PoorPeopleHappiness += forConviction ? -currentBiasCase.poor : currentBiasCase.poor;
-            RichPeopleHappiness += forConviction ? -currentBiasCase.rich : currentBiasCase.rich;
-        }
-        
-        public void OnJudgingFinished()
-        {
-            if (Mathf.Approximately(RichPeopleHappiness, minHappinessClamp) || Mathf.Approximately(PoorPeopleHappiness, minHappinessClamp))
-            {
-                AnnounceGameOver();
-            }
-        }
-        
-        public void AnnounceGameOver()
-        {
-            
         }
     }
 }
