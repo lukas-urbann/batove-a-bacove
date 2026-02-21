@@ -43,7 +43,7 @@ public class QuillInteractable : DraggableBase
     {
         _activeZone = zone;
         _currentPoints.Clear();
-        GameObject inkObj = Instantiate(inkPrefab);
+        GameObject inkObj = Instantiate(inkPrefab, paper.transform, true);
         _currentLine = inkObj.GetComponent<LineRenderer>();
         _currentLine.useWorldSpace = true;
         zone.AddInkLine(inkObj);
@@ -70,5 +70,4 @@ public class QuillInteractable : DraggableBase
         base.OnDragEnd();
         if (_activeZone != null) FinishLine();
     }
-    
 }

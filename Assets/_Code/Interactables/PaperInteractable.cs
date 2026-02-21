@@ -10,6 +10,7 @@ public class PaperInteractable : InteractableBase
     [SerializeField] private float returnDelay = 0.1f;
 
     private Vector3 _initialPosition;
+    private Coroutine _slideCoroutine;
 
     protected void Awake()
     {
@@ -18,12 +19,24 @@ public class PaperInteractable : InteractableBase
 
     protected override void OnClick()
     {
-        StartCoroutine(SlideOffAndBack());
+        /*
+        if (_slideCoroutine == null)
+            _slideCoroutine = StartCoroutine(SlideOffAndBack());
+            */
+
+    }
+    
+    public void AlternativeClick()
+    {
+        if (_slideCoroutine == null)
+            _slideCoroutine = StartCoroutine(SlideOffAndBack());
     }
 
     public void OnDecisionFinalized()
     {
-        StartCoroutine(SlideOffAndBack());
+        if (_slideCoroutine == null)
+            _slideCoroutine = StartCoroutine(SlideOffAndBack());
+        
     }
 
     private IEnumerator SlideOffAndBack()
@@ -42,6 +55,9 @@ public class PaperInteractable : InteractableBase
 
         leftZone.ClearInk();
         rightZone.ClearInk();
+        
+        leftZone.gameObject.SetActive(true);
+        rightZone.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(returnDelay);
 
@@ -52,5 +68,6 @@ public class PaperInteractable : InteractableBase
         }
 
         transform.position = _initialPosition;
+        _slideCoroutine = null;
     }
 }
