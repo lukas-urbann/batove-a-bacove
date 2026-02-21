@@ -1,9 +1,75 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class QuillInteractable : DraggableBase
 {
-    protected virtual void OnSign(Vector3 position)
+    [SerializeField] private VoteZone leftZone;
+    [SerializeField] private VoteZone rightZone;
+    [SerializeField] private GameObject inkPrefab;
+    [SerializeField] private float minPointDistance = 0.05f;
+    [SerializeField] private Transform quillTip;
+
+    private LineRenderer _currentLine;
+    private List<Vector3> _currentPoints = new List<Vector3>();
+    private VoteZone _activeZone;
+    
+
+    protected override void OnDragging()
     {
-        Debug.Log($"Signed at: {position}");
+        VoteZone zone = GetCurrentZone();
+
+        if (zone != null)
+        {
+            if (_activeZone != zone)
+                StartNewLine(zone);
+
+            AddPoint(transform.position);
+        }
+        else if (_activeZone != null)
+        {
+            FinishLine();
+        }
+    }
+
+    private VoteZone GetCurrentZone()
+    {
+        if (leftZone.Contains(quillTip.position))  return leftZone;
+        if (rightZone.Contains(quillTip.position)) return rightZone;
+        return null;
+    }
+
+    private void StartNewLine(VoteZone zone)
+    {
+        _activeZone = zone;
+        _currentPoints.Clear();
+        GameObject inkObj = Instantiate(inkPrefab);
+        _currentLine = inkObj.GetComponent<LineRenderer>();
+    }
+
+    private void AddPoint(Vector3 pos)
+    {
+        Vector3 tipPos = quillTip.position;
+        if (_currentPoints.Count > 0 && Vector3.Distance(_currentPoints[^1], tipPos) < minPointDistance)
+            return;
+        _currentPoints.Add(tipPos);
+        _currentLine.positionCount = _currentPoints.Count;
+        _currentLine.SetPositions(_currentPoints.ToArray());
+    }
+
+    private void FinishLine()
+    {
+        _activeZone = null;
+        _currentLine = null;
+    }
+
+    protected override void OnDragEnd()
+    {
+        base.OnDragEnd();
+        if (_activeZone != null) FinishLine();
+    }
+
+    protected virtual void OnSign(VoteZone zone)
+    {
+        Debug.Log($"Signed in: {zone.name}");
     }
 }
