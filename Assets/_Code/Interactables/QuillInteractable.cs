@@ -8,6 +8,7 @@ public class QuillInteractable : DraggableBase
     [SerializeField] private GameObject inkPrefab;
     [SerializeField] private float minPointDistance = 0.05f;
     [SerializeField] private Transform quillTip;
+    [SerializeField] private PaperInteractable paper;
 
     private LineRenderer _currentLine;
     private List<Vector3> _currentPoints = new List<Vector3>();
@@ -44,6 +45,8 @@ public class QuillInteractable : DraggableBase
         _currentPoints.Clear();
         GameObject inkObj = Instantiate(inkPrefab);
         _currentLine = inkObj.GetComponent<LineRenderer>();
+        _currentLine.useWorldSpace = true;
+        zone.AddInkLine(inkObj);
     }
 
     private void AddPoint(Vector3 pos)
@@ -67,9 +70,5 @@ public class QuillInteractable : DraggableBase
         base.OnDragEnd();
         if (_activeZone != null) FinishLine();
     }
-
-    protected virtual void OnSign(VoteZone zone)
-    {
-        Debug.Log($"Signed in: {zone.name}");
-    }
+    
 }

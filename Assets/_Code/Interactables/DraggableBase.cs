@@ -11,14 +11,14 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] protected float returnSpeed = 4f;
     [SerializeField] protected float hoverDarken = 0.6f;
     
-    protected Vector3 InitialPosition { get; private set; }
-    protected Quaternion InitialRotation { get; private set; }
+    private Vector3 InitialPosition { get; set; }
+    private Quaternion InitialRotation { get;  set; }
     protected SpriteRenderer Renderer { get; private set; }
     protected Color OriginalColor { get; private set; }
-    protected int OriginalSortingOrder { get; private set; }
+    private int OriginalSortingOrder { get; set; }
     protected bool IsDragging { get; set; }
     
-    public static bool AnyDragging { get; private set; }
+    protected static bool AnyDragging { get; private set; }
     
     protected virtual void Awake()
     {
@@ -73,7 +73,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     protected virtual void OnDragStart()
     {   
-        DraggableBase.AnyDragging = true;
+        AnyDragging = true;
         IsDragging = true;
         Renderer.color = OriginalColor;
         Renderer.sortingOrder = OriginalSortingOrder + 1;
@@ -81,30 +81,27 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     protected virtual void OnDragging()
     {
-        Debug.Log($"Drag: {gameObject.name}");
+        
     }
 
     protected virtual void OnDragEnd()
     {
-        DraggableBase.AnyDragging = false;
+        AnyDragging = false;
         IsDragging = false;
         Renderer.color = OriginalColor;
         Renderer.sortingOrder = OriginalSortingOrder;
-        Debug.Log($"Drag End: {gameObject.name}");
     }
 
     protected virtual void OnHoverEnter()
     {
-        if (DraggableBase.AnyDragging) return;
+        if (AnyDragging) return;
         Renderer.color = OriginalColor * hoverDarken;
-        Debug.Log($"Hover Enter: {gameObject.name}");
     }
 
     protected virtual void OnHoverExit()
     {
-        if (DraggableBase.AnyDragging) return;
+        if (AnyDragging) return;
         Renderer.color = OriginalColor;
-        Debug.Log($"Hover Exit: {gameObject.name}");
     }
 
     private Vector3 GetMouseWorldPos(PointerEventData eventData)

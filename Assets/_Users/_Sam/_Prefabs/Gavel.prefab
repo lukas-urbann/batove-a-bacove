@@ -181,3 +181,6 @@ MonoBehaviour:
   shakeMagnitude: 0.3
   mainCamera: {fileID: 0}
   validZone: {fileID: 0}
+  invalidColor: {r: 1, g: 0.3, b: 0.3, a: 1}
+  paper: {fileID: 0}
+  smashSound: {fileID: 0}
