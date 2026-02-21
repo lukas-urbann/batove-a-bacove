@@ -42,6 +42,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _offset = transform.position - GetMouseWorldPos(eventData);
         OnDragStart();
+        Cursor.visible = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -59,6 +60,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         OnDragEnd();
+        Cursor.visible = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
