@@ -353,3 +353,4 @@ MonoBehaviour:
   inkPrefab: {fileID: 7597819426494521131, guid: 79635f578d14c2e49bfd17345f710ea2, type: 3}
   minPointDistance: 0.05
   quillTip: {fileID: 496279462260848319}
+  paper: {fileID: 0}
