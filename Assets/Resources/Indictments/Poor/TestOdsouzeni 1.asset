@@ -12,13 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: TestOdsouzeni 1
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Z d\u016Fvodu neschopnosti ob\u017Ealovan\xE9ho jsme p\u0159i\u0161li o
-    {1}"
-  FillerWordsList:
-  - possibleFillTags:
-    - {fileID: 11400000, guid: d9d55f9ea1b300d498202439054b7bc9, type: 2}
-  - possibleFillTags:
-    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
+  text: Chudy:2
+  FillerWordsList: []
   Biases:
     poor: -0.14
     rich: -0.1
