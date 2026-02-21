@@ -11,10 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/Gavel.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/Gavel.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1771631321303</updated>
       <workItem from="1771631324550" duration="1715000" />
-      <workItem from="1771670176441" duration="4978000" />
+      <workItem from="1771670176441" duration="6519000" />
     </task>
     <servers />
   </component>
