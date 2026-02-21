@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
-  m_Name: TestOdsouzeni 1
+  m_Name: Response 6
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Tohoto jen prost\u011B nem\xE1me r\xE1di"
+  text: "J\xE1 nikdy nic neud\u011Blal, a jako d\u016Fkaz m\xE1m pro v\xE1s v\u0161echny
+    p\u0159\xEDtomn\xE9 v\xFDhodnou business nab\xEDdku"
   FillerWordsList: []
   Biases:
-    poor: -0.6
-    rich: 0.3
+    poor: -0.3
+    rich: -0.3

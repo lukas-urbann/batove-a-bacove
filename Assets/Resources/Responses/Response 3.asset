@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
-  m_Name: TestOdsouzeni 1
+  m_Name: Response 3
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Tohoto jen prost\u011B nem\xE1me r\xE1di"
+  text: "P\u0159izn\xE1v\xE1m se... no a co jako. A co jako. CO JAKO?"
   FillerWordsList: []
   Biases:
-    poor: -0.6
-    rich: 0.3
+    poor: 0.1
+    rich: 0.1

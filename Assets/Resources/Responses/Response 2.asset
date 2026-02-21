@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Response 2
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "To jsem nebyl j\xE1, to byl {0}!"
+  text: "To jsem nebyl j\xE1, to byl ten \u017Eebr\xE1k z ulice!"
   FillerWordsList: []
   Biases:
-    poor: -0.03
+    poor: -0.2
     rich: 0
