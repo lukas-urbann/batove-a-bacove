@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class VoteZone : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class VoteZone : MonoBehaviour
     private bool _hasInk;
 
     [SerializeField] private GameObject otherVoteZone;
+
+    public UnityEvent onSelect = new();
+    public UnityEvent onReset = new();
 
     private void Awake()
     {
@@ -30,6 +34,7 @@ public class VoteZone : MonoBehaviour
             GameState.Instance.SetZoneInked(isLeft, true);
             
             otherVoteZone.gameObject.SetActive(false);
+            onSelect?.Invoke();
         }
     }
 
@@ -40,6 +45,7 @@ public class VoteZone : MonoBehaviour
         _inkLines.Clear();
         _hasInk = false;
         GameState.Instance.SetZoneInked(isLeft, false);
+        onReset?.Invoke();
     }
     
     public void ShiftInk(Vector3 delta)

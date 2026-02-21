@@ -42,7 +42,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _offset = transform.position - GetMouseWorldPos(eventData);
         OnDragStart();
-        
+        GameState.Instance.isDragging = true;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -60,7 +60,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         OnDragEnd();
-        
+        GameState.Instance.isDragging = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -13,10 +14,9 @@ public class QuillInteractable : DraggableBase
     private LineRenderer _currentLine;
     private List<Vector3> _currentPoints = new List<Vector3>();
     private VoteZone _activeZone;
-    
 
     protected override void OnDragging()
-    {
+    {   
         VoteZone zone = GetCurrentZone();
 
         if (zone != null)
