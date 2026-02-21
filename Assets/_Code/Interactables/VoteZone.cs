@@ -9,6 +9,8 @@ public class VoteZone : MonoBehaviour
     private List<GameObject> _inkLines = new List<GameObject>();
     private bool _hasInk;
 
+    [SerializeField] private GameObject otherVoteZone;
+
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
@@ -26,6 +28,8 @@ public class VoteZone : MonoBehaviour
         {
             _hasInk = true;
             GameState.Instance.SetZoneInked(isLeft, true);
+            
+            otherVoteZone.gameObject.SetActive(false);
         }
     }
 

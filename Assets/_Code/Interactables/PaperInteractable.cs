@@ -1,57 +1,53 @@
 using UnityEngine;
 using System.Collections;
 
-public class PaperInteractable : DraggableBase
+public class PaperInteractable : InteractableBase
 {
     [SerializeField] private VoteZone leftZone;
     [SerializeField] private VoteZone rightZone;
     [SerializeField] private float slideSpeed = 5f;
     [SerializeField] private float offScreenY = -20f;
     [SerializeField] private float returnDelay = 0.1f;
-    [SerializeField] private float swipeDownThreshold = 1f;
 
     private Vector3 _initialPosition;
-    private bool _isAnimating;
+    private Coroutine _slideCoroutine;
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
         _initialPosition = transform.position;
     }
 
-    protected override void Update()
+    protected override void OnClick()
     {
-        
-    }
+        /*
+        if (_slideCoroutine == null)
+            _slideCoroutine = StartCoroutine(SlideOffAndBack());
+            */
 
-    protected override void OnDragEnd()
+    }
+    
+    public void AlternativeClick()
     {
-        base.OnDragEnd();
-        float draggedDown = _initialPosition.y - transform.position.y;
-        if (draggedDown > swipeDownThreshold && !_isAnimating)
-            StartCoroutine(SlideOffAndBack());
-        else if (!_isAnimating)
-            transform.position = _initialPosition;
+        if (_slideCoroutine == null)
+            _slideCoroutine = StartCoroutine(SlideOffAndBack());
     }
 
     public void OnDecisionFinalized()
     {
-        if (!_isAnimating)
-            StartCoroutine(SlideOffAndBack());
+        if (_slideCoroutine == null)
+            _slideCoroutine = StartCoroutine(SlideOffAndBack());
+        
     }
 
     private IEnumerator SlideOffAndBack()
     {
-        _isAnimating = true;
-        transform.position = _initialPosition;
-
         Vector3 offScreen = new Vector3(_initialPosition.x, offScreenY, _initialPosition.z);
-
+    
         while (Vector3.Distance(transform.position, offScreen) > 0.01f)
         {
             Vector3 prev = transform.position;
             transform.position = Vector3.Lerp(transform.position, offScreen, Time.deltaTime * slideSpeed);
-            Vector3 delta = transform.position - prev;  
+            Vector3 delta = transform.position - prev;
             leftZone.ShiftInk(delta);
             rightZone.ShiftInk(delta);
             yield return null;
@@ -59,6 +55,9 @@ public class PaperInteractable : DraggableBase
 
         leftZone.ClearInk();
         rightZone.ClearInk();
+        
+        leftZone.gameObject.SetActive(true);
+        rightZone.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(returnDelay);
 
@@ -69,11 +68,6 @@ public class PaperInteractable : DraggableBase
         }
 
         transform.position = _initialPosition;
-        _isAnimating = false;
-    }
-    
-    protected override bool CanDrag()
-    {
-        return !QuillInteractable.IsPickedUp && !_isAnimating;
+        _slideCoroutine = null;
     }
 }

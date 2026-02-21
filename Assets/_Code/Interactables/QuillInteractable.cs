@@ -1,12 +1,7 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Collider2D))]
-[RequireComponent(typeof(SpriteRenderer))]
-public class QuillInteractable : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class QuillInteractable : DraggableBase
 {
     [SerializeField] private VoteZone leftZone;
     [SerializeField] private VoteZone rightZone;
@@ -14,107 +9,32 @@ public class QuillInteractable : MonoBehaviour, IPointerClickHandler, IPointerEn
     [SerializeField] private float minPointDistance = 0.05f;
     [SerializeField] private Transform quillTip;
     [SerializeField] private PaperInteractable paper;
-    [SerializeField] private float hoverDarken = 0.6f;
-    [SerializeField] private Vector3 inkwellOffset;
-
-    private SpriteRenderer _renderer;
-    private Color _originalColor;
-    private Vector3 _initialPosition;
-    private bool _isPickedUp;
-    private bool _isDrawing;
 
     private LineRenderer _currentLine;
     private List<Vector3> _currentPoints = new List<Vector3>();
     private VoteZone _activeZone;
     
-    public static bool IsPickedUp { get; private set; }
 
-    private void Awake()
+    protected override void OnDragging()
     {
-        _renderer = GetComponent<SpriteRenderer>();
-        _originalColor = _renderer.color;
-        _initialPosition = transform.position;
-    }
+        VoteZone zone = GetCurrentZone();
 
-    private void Update()
-    {
-        if (_isPickedUp)
+        if (zone != null)
         {
-            Vector2 mouseScreen = Mouse.current.position.ReadValue();
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouseScreen);
-            mouseWorld.z = transform.position.z;
-            transform.position = mouseWorld;
+            if (_activeZone != zone)
+                StartNewLine(zone);
 
-            if (Mouse.current.leftButton.isPressed)
-            {
-                VoteZone zone = GetCurrentZone();
-                if (zone != null)
-                {
-                    if (!_isDrawing || _activeZone != zone)
-                        StartNewLine(zone);
-                    _isDrawing = true;
-                    AddPoint();
-                }
-                else
-                {
-                    StopDrawing();
-                }
-            }
-            else
-            {
-                StopDrawing();
-            }
+            AddPoint(transform.position);
         }
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (!_isPickedUp)
-            PickUp();
-    }
-    
-
-    private IEnumerator ReturnLerp()
-    {
-        Vector3 startPos = transform.position;
-        float elapsed = 0f;
-        float duration = 0.5f;
-        while (elapsed < duration)
+        else if (_activeZone != null)
         {
-            transform.position = Vector3.Lerp(startPos, _initialPosition, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
+            FinishLine();
         }
-        transform.position = _initialPosition;
-    }
-
-    
-
-    private void PickUp()
-    {
-        _isPickedUp = true;
-        IsPickedUp = true;
-    }
-
-    public void ReturnToInkwell()
-    {
-        _isPickedUp = false;
-        IsPickedUp = false;
-        StopDrawing();
-        StartCoroutine(ReturnLerp());
-    }
-    private void StopDrawing()
-    {
-        if (!_isDrawing) return;
-        _isDrawing = false;
-        _activeZone = null;
-        _currentLine = null;
-        _currentPoints.Clear();
     }
 
     private VoteZone GetCurrentZone()
     {
-        if (leftZone.Contains(quillTip.position)) return leftZone;
+        if (leftZone.Contains(quillTip.position))  return leftZone;
         if (rightZone.Contains(quillTip.position)) return rightZone;
         return null;
     }
@@ -123,13 +43,13 @@ public class QuillInteractable : MonoBehaviour, IPointerClickHandler, IPointerEn
     {
         _activeZone = zone;
         _currentPoints.Clear();
-        GameObject inkObj = Instantiate(inkPrefab);
+        GameObject inkObj = Instantiate(inkPrefab, paper.transform, true);
         _currentLine = inkObj.GetComponent<LineRenderer>();
         _currentLine.useWorldSpace = true;
         zone.AddInkLine(inkObj);
     }
 
-    private void AddPoint()
+    private void AddPoint(Vector3 pos)
     {
         Vector3 tipPos = quillTip.position;
         if (_currentPoints.Count > 0 && Vector3.Distance(_currentPoints[^1], tipPos) < minPointDistance)
@@ -139,15 +59,15 @@ public class QuillInteractable : MonoBehaviour, IPointerClickHandler, IPointerEn
         _currentLine.SetPositions(_currentPoints.ToArray());
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    private void FinishLine()
     {
-        if (_isPickedUp) return;
-        _renderer.color = _originalColor * hoverDarken;
+        _activeZone = null;
+        _currentLine = null;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    protected override void OnDragEnd()
     {
-        if (_isPickedUp) return;
-        _renderer.color = _originalColor;
+        base.OnDragEnd();
+        if (_activeZone != null) FinishLine();
     }
 }

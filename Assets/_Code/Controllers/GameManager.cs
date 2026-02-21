@@ -3,7 +3,6 @@ using System.Collections;
 using Dialogues;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 namespace Controllers
 {
@@ -30,6 +29,22 @@ namespace Controllers
         [SerializeField] private float minHappinessClamp = 0;
         [SerializeField] private float maxHappinessClamp = 1;
         
+        [Header("Coins")]
+        private int _coins;
+        public int Coins
+        {
+            get => _coins;
+            set
+            {
+                _coins += value;
+
+                if (_coins < 0)
+                {
+                    TriggerGameOver();
+                }
+            }
+        }
+        
         private float _poorPeopleHappiness;
         private float PoorPeopleHappiness
         {
@@ -46,7 +61,7 @@ namespace Controllers
                 }
                 else
                 {
-                    _poorPeopleHappiness = value;
+                    _poorPeopleHappiness += value;
                 }
             }
         }
@@ -68,7 +83,7 @@ namespace Controllers
                 }
                 else
                 {
-                    _richPeopleHappiness = value;
+                    _richPeopleHappiness += value;
                 }
             }
         }
@@ -131,6 +146,11 @@ namespace Controllers
             RichPeopleHappiness += forConviction ? -_currentBiasCase.rich : _currentBiasCase.rich;
             Debug.Log($"Judged for {(forConviction ? "conviction" : "dismissal")}. Poor happiness: {PoorPeopleHappiness}, Rich happiness: {RichPeopleHappiness}");
             AfterJudging();
+        }
+
+        private void TriggerGameOver()
+        {
+            
         }
         
         //Timed
