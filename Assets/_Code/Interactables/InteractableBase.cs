@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(Collider2D))]
 public class InteractableBase : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         OnClick();
@@ -21,16 +22,16 @@ public class InteractableBase : MonoBehaviour, IPointerClickHandler, IPointerEnt
 
     protected virtual void OnClick()
     {
-        Debug.Log($"Clicked: {gameObject.name}");
+        
     }
 
-    protected virtual void OnHoverEnter()
+    private void OnHoverEnter()
     {
-        Debug.Log($"Hover Enter: {gameObject.name}");
+        
     }
 
-    protected virtual void OnHoverExit()
+    private void OnHoverExit()
     {
-        Debug.Log($"Hover Exit: {gameObject.name}");
+        
     }
 }

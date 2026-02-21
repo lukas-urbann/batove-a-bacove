@@ -14,6 +14,10 @@ public class GavelInteractable : DraggableBase
     [SerializeField] private float shakeMagnitude = 0.3f;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Collider2D validZone;
+    [SerializeField] private Color invalidColor = new Color(1f, 0.3f, 0.3f);
+    [SerializeField] private PaperInteractable paper;
+
+    [SerializeField] private AudioClip smashSound;
 
     private bool _isSmashed;
     private float _previousY;
@@ -29,7 +33,7 @@ public class GavelInteractable : DraggableBase
             float distance = _dragStartY - transform.position.y;
             _previousY = transform.position.y;
 
-            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance && IsInValidZone())
+            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance && IsInValidZone() && CanSmash())
             {
                 _isSmashed = true;
                 transform.rotation = Quaternion.Euler(0, 0, smashAngle);
@@ -57,13 +61,6 @@ public class GavelInteractable : DraggableBase
         base.OnDragEnd();
         _isSmashed = false;
     }
-
-    protected virtual void OnSmash()
-    {
-        Debug.Log("Gavel smashed");
-        StartCoroutine(ShakeCamera());
-        StartCoroutine(SmashDelay());
-    }
     
     private IEnumerator ShakeCamera()
     {
@@ -89,6 +86,35 @@ public class GavelInteractable : DraggableBase
     
     protected override bool CanDrag()
     {
-        return !_isSmashed;
+        return !_isSmashed && GameState.Instance.CanGavel();
+    }
+    
+    private bool CanSmash()
+    {
+        return GameState.Instance.CanGavel();
+    }
+    
+    protected virtual void OnSmash()
+    {
+        GameState.Instance.FinalizeDecision();
+        paper.OnDecisionFinalized();
+        StartCoroutine(ShakeCamera());
+        StartCoroutine(SmashDelay());
+    }
+    
+    protected override void OnHoverEnter()
+    {
+        if (AnyDragging) return;
+    
+        if (!GameState.Instance.CanGavel())
+            Renderer.color = OriginalColor * invalidColor;
+        else
+            Renderer.color = OriginalColor * hoverDarken;
+    }
+
+    protected override void OnHoverExit()
+    {
+        if (AnyDragging) return;
+        Renderer.color = OriginalColor;
     }
 }

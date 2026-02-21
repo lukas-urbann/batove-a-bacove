@@ -210,17 +210,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &278256693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8993473508934332049, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
-  m_PrefabInstance: {fileID: 5878711578276930778}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55890c85ba8718b42ae0d8a40913ad22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VoteZone
 --- !u!1001 &1292571643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -229,6 +218,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
+      propertyPath: paper
+      value: 
+      objectReference: {fileID: 8585350215972152739}
     - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
       propertyPath: validZone
       value: 
@@ -286,17 +279,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
---- !u!114 &1377020541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3272635285055417828, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
-  m_PrefabInstance: {fileID: 5878711578276930778}
+--- !u!1 &1508192534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508192535}
+  - component: {fileID: 1508192536}
+  m_Layer: 0
+  m_Name: GameStateObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1508192535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508192534}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03065, y: -0.31046, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1508192536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508192534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55890c85ba8718b42ae0d8a40913ad22, type: 3}
+  m_Script: {fileID: 11500000, guid: 56672f7446fe3ae428f9b897b0154d17, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VoteZone
+  m_EditorClassIdentifier: Assembly-CSharp::GameState
 --- !u!1 &1698595845
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +469,7 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
   m_PrefabInstance: {fileID: 957950548634444379}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5878711578276930778
+--- !u!1001 &2448864987721414341
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -451,55 +477,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 2951847403495314789, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+      propertyPath: m_Name
+      value: Paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalPosition.y
       value: -9.27
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2787775999834308984, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+    - target: {fileID: 3292022013316216698, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7718646116162968627, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
-      propertyPath: m_Name
-      value: Paper
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+--- !u!114 &3268027324293352011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4701156227960454609, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+  m_PrefabInstance: {fileID: 2448864987721414341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55890c85ba8718b42ae0d8a40913ad22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoteZone
 --- !u!1001 &6912838718649662212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -610,26 +647,53 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4412624280137381819, guid: dea0b2bee5a7d0847b1f40c3e61364a9, type: 3}
+      propertyPath: paper
+      value: 
+      objectReference: {fileID: 8585350215972152739}
+    - target: {fileID: 4412624280137381819, guid: dea0b2bee5a7d0847b1f40c3e61364a9, type: 3}
       propertyPath: leftZone
       value: 
-      objectReference: {fileID: 278256693}
+      objectReference: {fileID: 3268027324293352011}
     - target: {fileID: 4412624280137381819, guid: dea0b2bee5a7d0847b1f40c3e61364a9, type: 3}
       propertyPath: rightZone
       value: 
-      objectReference: {fileID: 1377020541}
+      objectReference: {fileID: 9007161302213134654}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dea0b2bee5a7d0847b1f40c3e61364a9, type: 3}
+--- !u!114 &8585350215972152739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5833828007726585678, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+  m_PrefabInstance: {fileID: 2448864987721414341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b58bf1993032b4d9304ee3c7869b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaperInteractable
+--- !u!114 &9007161302213134654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4697410701514902567, guid: 67ee4d40cb4fe284086edfc97f4070b3, type: 3}
+  m_PrefabInstance: {fileID: 2448864987721414341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55890c85ba8718b42ae0d8a40913ad22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoteZone
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 6912838718649662212}
+  - {fileID: 1508192535}
   - {fileID: 1698595848}
   - {fileID: 1292571643}
   - {fileID: 7012078265707810286}
   - {fileID: 265008813}
   - {fileID: 957950548634444379}
-  - {fileID: 5878711578276930778}
+  - {fileID: 2448864987721414341}
