@@ -15,19 +15,55 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!CanDrag()) return;
         transform.position = GetMouseWorldPos(eventData) + _offset;
         OnDragging();
     }
+    
+    protected virtual bool CanDrag()
+    {
+        return true;
+    }
 
-    public void OnEndDrag(PointerEventData eventData) => OnDragEnd();
-    public void OnPointerEnter(PointerEventData eventData) => OnHoverEnter();
-    public void OnPointerExit(PointerEventData eventData) => OnHoverExit();
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        OnDragEnd();
+    }
 
-    protected virtual void OnDragStart() => Debug.Log($"Drag Start: {gameObject.name}");
-    protected virtual void OnDragging() => Debug.Log($"Drag: {gameObject.name}");
-    protected virtual void OnDragEnd() => Debug.Log($"Drag End: {gameObject.name}");
-    protected virtual void OnHoverEnter() => Debug.Log($"Hover Enter: {gameObject.name}");
-    protected virtual void OnHoverExit() => Debug.Log($"Hover Exit: {gameObject.name}");
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        OnHoverEnter();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnHoverExit();
+    }
+
+    protected virtual void OnDragStart()
+    {
+        Debug.Log($"Drag Start: {gameObject.name}");
+    }
+
+    protected virtual void OnDragging()
+    {
+        Debug.Log($"Drag: {gameObject.name}");
+    }
+
+    protected virtual void OnDragEnd()
+    {
+        Debug.Log($"Drag End: {gameObject.name}");
+    }
+
+    protected virtual void OnHoverEnter()
+    {
+        Debug.Log($"Hover Enter: {gameObject.name}");
+    }
+
+    protected virtual void OnHoverExit()
+    {
+        Debug.Log($"Hover Exit: {gameObject.name}");
+    }
 
     private Vector3 GetMouseWorldPos(PointerEventData eventData)
     {

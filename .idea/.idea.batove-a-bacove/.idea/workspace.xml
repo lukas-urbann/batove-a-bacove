@@ -3,21 +3,27 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/Gavel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/Gavel.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/CameraScroll.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/CameraScroll.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/Dialogue.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/Dialogue.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/TypeEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/TypeEffect.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
@@ -32,6 +38,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@bb329a87fcdc/Runtime/UGUI/UI/Core/GraphicRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="NZoEViGh" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -44,21 +53,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "testing",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.9f1\Editor\Unity.exe" />
@@ -105,6 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1771631321303</updated>
       <workItem from="1771631324550" duration="1715000" />
+      <workItem from="1771670176441" duration="4978000" />
     </task>
     <servers />
   </component>
