@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using Dialogues;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace Controllers
 {
@@ -20,6 +22,9 @@ namespace Controllers
         
         [Header("Timers")]
         [SerializeField] private float daySwitchTime = 4;
+        [SerializeField] private float workDayTime = 60;
+        [SerializeField] private float responseTime = 2.5f;
+        [SerializeField] private float noJudgedTimeoff = 2f;
 
         [Header("Limits")]
         [SerializeField] private float minHappinessClamp = 0;
@@ -68,6 +73,11 @@ namespace Controllers
         }
 
         public DialogueWriter sentenceWriter;
+        public DialogueWriter responseWriter;
+        private DialogueBias currentBiasCase = null;
+
+        public UnityEvent onJudgedReady;
+        public UnityEvent onJudgedDismissed;
         
         private void Awake()
         {
@@ -91,8 +101,41 @@ namespace Controllers
         //jen jednou po vstupu do game sceny
         private void Start()
         {
+            AdvanceDay();
+        }
+
+        private void AdvanceDay()
+        {
             DayManager.Instance.IncreaseDay();
             StartCoroutine(NewDayTimeoff());
+        }
+
+        private void Update()
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                AdvanceDay();
+            }
+            
+            if (Keyboard.current.hKey.isPressed)
+            {
+                JudgeResponse(true);
+                onJudgedDismissed?.Invoke();
+                StartCoroutine(NoJudgedTimer());
+            }
+            
+            if (Keyboard.current.kKey.isPressed)
+            {
+                JudgeResponse(false);
+                onJudgedDismissed?.Invoke();
+                StartCoroutine(NoJudgedTimer());
+            }
+        }
+        
+        private IEnumerator NoJudgedTimer()
+        {
+            yield return new WaitForSeconds(noJudgedTimeoff);
+            CreateNewJudged();
         }
 
         public void CreateNewJudged()
@@ -100,12 +143,27 @@ namespace Controllers
             //random judged type
             var judgedType = (JudgedType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(JudgedType)).Length);
             var d = DialogueManager.Instance.CreateNewDialogue(judgedType);
+            onJudgedReady?.Invoke();
             sentenceWriter.WriteSentence(d.Excerpt.Item1);
+            StartCoroutine(ResponseWriteDelay(d.Response.text));
+            currentBiasCase = d.Bias;
+        }
+
+        private IEnumerator ResponseWriteDelay(string response)
+        {
+            yield return new WaitForSeconds(responseTime);
+            responseWriter.WriteSentence(response);
         }
         
         public void RemoveJudged()
         {
-            
+            onJudgedDismissed?.Invoke();
+        }
+        
+        public void JudgeResponse(bool forConviction)
+        {
+            PoorPeopleHappiness += forConviction ? -currentBiasCase.poor : currentBiasCase.poor;
+            RichPeopleHappiness += forConviction ? -currentBiasCase.rich : currentBiasCase.rich;
         }
         
         public void OnJudgingFinished()
