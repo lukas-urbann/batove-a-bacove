@@ -3,21 +3,23 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/CameraScroll.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/CameraScroll.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/Dialogue.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/Dialogue.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/TypeEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scripts/TypeEffect.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
@@ -31,6 +33,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Controllers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@bb329a87fcdc/Runtime/UGUI/UI/Core/GraphicRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="NZoEViGh" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
