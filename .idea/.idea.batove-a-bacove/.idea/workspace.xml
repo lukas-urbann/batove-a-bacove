@@ -11,11 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/PaperInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/PaperInteractable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/QuillInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/QuillInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +59,7 @@
     <commands />
     <urls />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -139,6 +138,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
