@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using Controllers;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Debug = System.Diagnostics.Debug;
 
 namespace Dialogues
 {
@@ -33,12 +35,20 @@ namespace Dialogues
             InitDialogueData();
         }
 
-        private DialogueExcerpt GetRandomIndictment()
+        private DialogueExcerpt GetTypedIndictment(JudgedType judgedType)
         {
-            var l = RichIndictments.ToList();
-            l.AddRange(PoorIndictments);
-            var randomItem = l[UnityEngine.Random.Range(0, l.Count)];
-
+            return judgedType switch
+            {
+                JudgedType.Poor => GetRandomIndictment(PoorIndictments.ToList()),
+                JudgedType.Rich => GetRandomIndictment(RichIndictments.ToList()),
+                _ => GetRandomIndictment()
+            };
+        }
+        
+        private DialogueExcerpt GetRandomIndictment(List<DialogueSentence> l = null)
+        {
+            var randomItem = l?[Random.Range(0, l.Count)];
+            Debug.Assert(randomItem != null, nameof(randomItem) + " != null");
             DialogueExcerpt dialogueExcerpt = randomItem.CreateDialogueExcerpt();
             return dialogueExcerpt;
         }
@@ -46,7 +56,7 @@ namespace Dialogues
         private DialogueSentence GetRandomResponse()
         {
             var l = Responses.ToList();
-            return l[UnityEngine.Random.Range(0, l.Count)];
+            return l[Random.Range(0, l.Count)];
         }
 
         private void InitDialogueData()
@@ -57,9 +67,10 @@ namespace Dialogues
             _responses = Resources.LoadAll("Responses", typeof(DialogueSentence)).Cast<DialogueSentence>();
         }
 
-        public void CreateNewDialogue()
+        public Dialogue CreateNewDialogue(JudgedType judgedType)
         {
-            Dialogue d = new Dialogue(GetRandomIndictment(), GetRandomResponse());
+            Dialogue d = new Dialogue(GetTypedIndictment(judgedType), GetRandomResponse());
+            return d;
         }
     }
 }

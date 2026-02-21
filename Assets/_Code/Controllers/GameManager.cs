@@ -1,10 +1,21 @@
+using System;
+using Dialogues;
 using UnityEngine;
 
 namespace Controllers
 {
+    public enum JudgedType
+    {
+        Poor = -1,
+        Rich = 1
+    }
+    
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
+        
+        public Action OnGamePause;
+        public Action OnGameResume;
 
         [Header("Limits")]
         [SerializeField] private float minHappinessClamp = 0;
@@ -51,7 +62,7 @@ namespace Controllers
                 }
             }
         }
-
+        
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -64,7 +75,29 @@ namespace Controllers
             }
         }
 
+        //jen jednou po vstupu do game sceny
+        private void Start()
+        {
+            DayManager.Instance.IncreaseDay();
+        }
+
         public void CreateNewJudged()
+        {
+            //random judged type
+            var judgedType = (JudgedType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(JudgedType)).Length);
+            DialogueManager.Instance.CreateNewDialogue(judgedType);
+            
+        }
+        
+        public void OnJudgingFinished()
+        {
+            if (Mathf.Approximately(RichPeopleHappiness, minHappinessClamp) || Mathf.Approximately(PoorPeopleHappiness, minHappinessClamp))
+            {
+                AnnounceGameOver();
+            }
+        }
+        
+        public void AnnounceGameOver()
         {
             
         }

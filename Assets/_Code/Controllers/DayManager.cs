@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 namespace Controllers
@@ -9,9 +11,11 @@ namespace Controllers
         public static DayManager Instance { get; private set; }
 
         [SerializeField] private int leastPeopleToJudge = 4;
-        [SerializeField] private int mostPeopleToJudge = 25;
+        [SerializeField] private int mostPeopleToJudge = 100;
+        [SerializeField] private int highestPeopleIncrementPerDay = 4;
         
-        public Action OnNewDayEnded;
+        public UnityEvent OnNewDay;
+        
         public Action<int> OnNewDayStarted;
         
         private void Awake()
@@ -33,7 +37,8 @@ namespace Controllers
         {
             _day++;
             OnNewDayStarted?.Invoke(_day);
-            _toJudge = Mathf.Clamp(_day + Random.Range(0, 4), leastPeopleToJudge, mostPeopleToJudge);
+            OnNewDay?.Invoke();
+            _toJudge = Mathf.Clamp(_day + Random.Range(0, highestPeopleIncrementPerDay), leastPeopleToJudge, mostPeopleToJudge);
         }
     }
 }

@@ -7,7 +7,7 @@ public class DayCountDisplay : MonoBehaviour
     [SerializeField] private string prefix = "Dny v moci";
     [SerializeField] private TMP_Text _dayCountText;
 
-    private void OnEnable()
+    private void Start()
     {
         DayManager.Instance.OnNewDayStarted += UpdateText;
     }
@@ -19,6 +19,6 @@ public class DayCountDisplay : MonoBehaviour
 
     private void UpdateText(int day)
     {
-        _dayCountText.text = $"{prefix}: {day}";
+        _dayCountText.text = $"{prefix} {day}";
     }
 }
