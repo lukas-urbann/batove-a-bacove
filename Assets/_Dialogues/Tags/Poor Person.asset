@@ -10,5 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bae9a9ee33f1d414292a21f1f64d14c0, type: 3}
-  m_Name: Person
+  m_Name: Poor Person
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueTag
+  note: 

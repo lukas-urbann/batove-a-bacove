@@ -10,11 +10,13 @@ namespace Dialogues
         public static DialogueManager Instance { get; private set; }
         
         private IEnumerable<DialogueFillWord> _words;
-        private IEnumerable<DialogueSentence> _indictments;
+        private IEnumerable<DialogueSentence> _richIndictments;
+        private IEnumerable<DialogueSentence> _poorIndictments;
         private IEnumerable<DialogueSentence> _responses;
         
         public IEnumerable<DialogueFillWord> Words => _words;
-        public IEnumerable<DialogueSentence> Indictments => _indictments;
+        public IEnumerable<DialogueSentence> RichIndictments => _richIndictments;
+        public IEnumerable<DialogueSentence> PoorIndictments => _poorIndictments;
         public IEnumerable<DialogueSentence> Responses => _responses;
 
         private void Awake()
@@ -31,25 +33,33 @@ namespace Dialogues
             InitDialogueData();
         }
 
-        public void Update()
+        private DialogueExcerpt GetRandomIndictment()
         {
-            //try random
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                var l = _indictments.ToList();
-                var randomItem = l[UnityEngine.Random.Range(0, l.Count)];
+            var l = RichIndictments.ToList();
+            l.AddRange(PoorIndictments);
+            var randomItem = l[UnityEngine.Random.Range(0, l.Count)];
 
-                DialogueExcerpt dialogueExcerpt = randomItem.CreateDialogueExcerpt();
-                
-                Debug.Log(dialogueExcerpt.Item1 + " | Weight:" + dialogueExcerpt.Item2.poor + " | " + dialogueExcerpt.Item2.rich);
-            }
+            DialogueExcerpt dialogueExcerpt = randomItem.CreateDialogueExcerpt();
+            return dialogueExcerpt;
+        }
+        
+        private DialogueSentence GetRandomResponse()
+        {
+            var l = Responses.ToList();
+            return l[UnityEngine.Random.Range(0, l.Count)];
         }
 
         private void InitDialogueData()
         {
             _words = Resources.LoadAll("Words", typeof(DialogueFillWord)).Cast<DialogueFillWord>();
-            _indictments = Resources.LoadAll("Indictments", typeof(DialogueSentence)).Cast<DialogueSentence>();
+            _richIndictments = Resources.LoadAll("Indictments/Rich", typeof(DialogueSentence)).Cast<DialogueSentence>();
+            _poorIndictments = Resources.LoadAll("Indictments/Poor", typeof(DialogueSentence)).Cast<DialogueSentence>();
             _responses = Resources.LoadAll("Responses", typeof(DialogueSentence)).Cast<DialogueSentence>();
+        }
+
+        public void CreateNewDialogue()
+        {
+            Dialogue d = new Dialogue(GetRandomIndictment(), GetRandomResponse());
         }
     }
 }

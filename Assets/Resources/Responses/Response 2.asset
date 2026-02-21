@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Response 2
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
   text: "To jsem nebyl j\xE1, to byl {0}!"
-  FillerWordsList:
-  - possibleFillTags:
-    - {fileID: 11400000, guid: d9d55f9ea1b300d498202439054b7bc9, type: 2}
+  FillerWordsList: []
   Biases:
     poor: -0.03
     rich: 0
