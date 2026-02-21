@@ -4,10 +4,10 @@ using UnityEngine.EventSystems;
 
 public class CameraScrollController : MonoBehaviour
 {
-    public float panSpeed = 5f;
+    public float panSpeed = 30f;
     public float edgeThreshold = 25f;
-    public float leftLimit = -10f;
-    public float rightLimit = 10f;
+    public float leftLimit = -28f;
+    public float rightLimit = 28f;
 
     void Update()
     {
