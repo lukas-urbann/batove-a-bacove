@@ -76,7 +76,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         AnyDragging = true;
         IsDragging = true;
         Renderer.color = OriginalColor;
-        Renderer.sortingOrder = OriginalSortingOrder + 1;
+        Renderer.sortingOrder = OriginalSortingOrder + 2;
     }
 
     protected virtual void OnDragging()

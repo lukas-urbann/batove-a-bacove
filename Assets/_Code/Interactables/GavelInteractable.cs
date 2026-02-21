@@ -17,7 +17,7 @@ public class GavelInteractable : DraggableBase
     [SerializeField] private Color invalidColor = new Color(1f, 0.3f, 0.3f);
     [SerializeField] private PaperInteractable paper;
 
-    [SerializeField] private AudioClip smashSound;
+    //[SerializeField] private AudioClip smashSound;
 
     private bool _isSmashed;
     private float _previousY;
