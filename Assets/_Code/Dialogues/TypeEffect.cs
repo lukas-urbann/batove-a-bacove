@@ -30,5 +30,9 @@ public class TypeEffect : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
     }
-    
+
+    public void ClearText()
+    {
+        textComponent.text = string.Empty;
+    }
 }

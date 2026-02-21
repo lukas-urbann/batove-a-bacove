@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Dialogues;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Controllers
 {
     public enum JudgedType
     {
-        Poor = -1,
+        Poor = 0,
         Rich = 1
     }
     
@@ -16,6 +17,9 @@ namespace Controllers
         
         public Action OnGamePause;
         public Action OnGameResume;
+        
+        [Header("Timers")]
+        [SerializeField] private float daySwitchTime = 4;
 
         [Header("Limits")]
         [SerializeField] private float minHappinessClamp = 0;
@@ -62,6 +66,8 @@ namespace Controllers
                 }
             }
         }
+
+        public DialogueWriter sentenceWriter;
         
         private void Awake()
         {
@@ -75,17 +81,30 @@ namespace Controllers
             }
         }
 
+        private IEnumerator NewDayTimeoff()
+        {
+            RemoveJudged();
+            yield return new WaitForSeconds(daySwitchTime);
+            CreateNewJudged();
+        }
+        
         //jen jednou po vstupu do game sceny
         private void Start()
         {
             DayManager.Instance.IncreaseDay();
+            StartCoroutine(NewDayTimeoff());
         }
 
         public void CreateNewJudged()
         {
             //random judged type
             var judgedType = (JudgedType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(JudgedType)).Length);
-            DialogueManager.Instance.CreateNewDialogue(judgedType);
+            var d = DialogueManager.Instance.CreateNewDialogue(judgedType);
+            sentenceWriter.WriteSentence(d.Excerpt.Item1);
+        }
+        
+        public void RemoveJudged()
+        {
             
         }
         

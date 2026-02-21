@@ -3,7 +3,6 @@ using System.Linq;
 using Controllers;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Debug = System.Diagnostics.Debug;
 
 namespace Dialogues
 {
@@ -41,7 +40,7 @@ namespace Dialogues
             {
                 JudgedType.Poor => GetRandomIndictment(PoorIndictments.ToList()),
                 JudgedType.Rich => GetRandomIndictment(RichIndictments.ToList()),
-                _ => GetRandomIndictment()
+                _ => GetRandomIndictment(PoorIndictments.ToList())
             };
         }
         
