@@ -18,7 +18,7 @@ namespace Dialogues
             public DialogueTag[] possibleFillTags;
         }
 
-        public Tuple<string, DialogueBias> GetRandomizedText()
+        public DialogueExcerpt GetRandomizedText()
         {
             DialogueBias bias = new DialogueBias
             {
@@ -32,10 +32,10 @@ namespace Dialogues
                 var randomWord = RandomWord(DialogueManager.Instance.Words, w => w.Tags.Contains(tag));
                 bias.poor += 1 * randomWord.Weight.weight;
                 bias.rich += 1 * randomWord.Weight.weight;
-                return randomWord.name;
+                return $"<i>{randomWord.name}</i>";
             });
-            
-            return new Tuple<string, DialogueBias>(filled, bias);
+
+            return new DialogueExcerpt(filled, bias);
         }
         
         public DialogueFillWord RandomWord(IEnumerable<DialogueFillWord> source, Func<DialogueFillWord, bool> predicate)
@@ -48,8 +48,10 @@ namespace Dialogues
         public string ResolveTemplate(string template, Func<int, string> resolver)
         {
             //dekuji c#
-            return Regex.Replace(template, @"\{arg(\d+)\}", match =>
+            return Regex.Replace(template, @"\{(\d+)\}", match =>
             {
+                //to cislovani tu je kvuli tomu ze pak muzeme dosadit slova se stejnymi tagy do textu nekolikrat
+                //aniz by bylo potreba pro kazdy argument vybirat kategorie jednotlive
                 int index = int.Parse(match.Groups[1].Value);
                 return resolver(index);
             });
