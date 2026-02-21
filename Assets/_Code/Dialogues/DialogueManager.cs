@@ -39,7 +39,7 @@ namespace Dialogues
                 var l = _indictments.ToList();
                 var randomItem = l[UnityEngine.Random.Range(0, l.Count)];
 
-                DialogueExcerpt dialogueExcerpt = randomItem.GetRandomizedText();
+                DialogueExcerpt dialogueExcerpt = randomItem.CreateDialogueExcerpt();
                 
                 Debug.Log(dialogueExcerpt.Item1 + " | Weight:" + dialogueExcerpt.Item2.poor + " | " + dialogueExcerpt.Item2.rich);
             }

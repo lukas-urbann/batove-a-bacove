@@ -18,7 +18,7 @@ namespace Dialogues
             public DialogueTag[] possibleFillTags;
         }
 
-        public DialogueExcerpt GetRandomizedText()
+        public DialogueExcerpt CreateDialogueExcerpt()
         {
             DialogueBias bias = new DialogueBias
             {
@@ -30,8 +30,8 @@ namespace Dialogues
             {
                 var tag = FillerWordsList[i].possibleFillTags[UnityEngine.Random.Range(0, FillerWordsList[i].possibleFillTags.Length)];
                 var randomWord = RandomWord(DialogueManager.Instance.Words, w => w.Tags.Contains(tag));
-                bias.poor += 1 * randomWord.Weight.weight;
-                bias.rich += 1 * randomWord.Weight.weight;
+                bias.poor *= randomWord.Weight.weight;
+                bias.rich *= randomWord.Weight.weight;
                 return $"<i>{randomWord.name}</i>";
             });
 

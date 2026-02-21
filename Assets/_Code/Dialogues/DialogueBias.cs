@@ -1,11 +1,12 @@
 using System;
+using UnityEngine;
 
 namespace Dialogues
 {
     [Serializable]
     public class DialogueBias
     {
-        public float poor;
-        public float rich;
+        [Range(-1, 1)] public float poor;
+        [Range(-1, 1)] public float rich;
     }
 }

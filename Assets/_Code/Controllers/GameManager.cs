@@ -6,11 +6,9 @@ namespace Controllers
     {
         public static GameManager Instance { get; private set; }
 
-        [Header("Manages Game Progression")]
-        [SerializeField] private int day = 0;
         [Header("Limits")]
         [SerializeField] private float minHappinessClamp = 0;
-        [SerializeField] private float maxHappinessClamp = 100;
+        [SerializeField] private float maxHappinessClamp = 1;
         
         private float _poorPeopleHappiness;
         private float PoorPeopleHappiness
@@ -66,7 +64,7 @@ namespace Controllers
             }
         }
 
-        class Day
+        public void CreateNewJudged()
         {
             
         }
