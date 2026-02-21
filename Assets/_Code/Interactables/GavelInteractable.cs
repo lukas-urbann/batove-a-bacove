@@ -34,7 +34,7 @@ public class GavelInteractable : DraggableBase
             float distance = _dragStartY - transform.position.y;
             _previousY = transform.position.y;
 
-            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance && IsInValidZone() && CanSmash())
+            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance && IsInValidZone())
             {
                 _isSmashed = true;
                 transform.rotation = Quaternion.Euler(0, 0, smashAngle);
@@ -81,7 +81,6 @@ public class GavelInteractable : DraggableBase
     private IEnumerator SmashDelay()
     {
         yield return new WaitForSeconds(0.5f);
-        IsDragging = false;
         _isSmashed = false;
     }
     
@@ -97,8 +96,12 @@ public class GavelInteractable : DraggableBase
     
     protected virtual void OnSmash()
     {
-        GameState.Instance.FinalizeDecision();
-        paper.OnDecisionFinalized();
+        if (GameState.Instance.CanGavel())
+        {
+            GameState.Instance.FinalizeDecision();
+            paper.OnDecisionFinalized();
+        }
+        
         StartCoroutine(ShakeCamera());
         StartCoroutine(SmashDelay());
     }

@@ -42,12 +42,12 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _offset = transform.position - GetMouseWorldPos(eventData);
         OnDragStart();
-        Cursor.visible = false;
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!CanDrag()) return;
+        //if (!CanDrag()) return;
         transform.position = GetMouseWorldPos(eventData) + _offset;
         OnDragging();
     }
@@ -60,7 +60,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         OnDragEnd();
-        Cursor.visible = true;
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -79,6 +79,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         IsDragging = true;
         Renderer.color = OriginalColor;
         Renderer.sortingOrder = OriginalSortingOrder + 2;
+        Cursor.visible = false;
     }
 
     protected virtual void OnDragging()
@@ -92,6 +93,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         IsDragging = false;
         Renderer.color = OriginalColor;
         Renderer.sortingOrder = OriginalSortingOrder;
+        Cursor.visible = true;
     }
 
     protected virtual void OnHoverEnter()
