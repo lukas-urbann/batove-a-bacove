@@ -15,8 +15,14 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!CanDrag()) return;
         transform.position = GetMouseWorldPos(eventData) + _offset;
         OnDragging();
+    }
+    
+    protected virtual bool CanDrag()
+    {
+        return true;
     }
 
     public void OnEndDrag(PointerEventData eventData)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8971920907106572532}
   - component: {fileID: 8014020533414578058}
   - component: {fileID: 7305825974738930980}
-  - component: {fileID: 5543911118808122186}
+  - component: {fileID: 2993113800013893602}
   m_Layer: 0
   m_Name: Gavel
   m_TagString: Untagged
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5543911118808122186
+--- !u!114 &2993113800013893602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0178a909f303cd04f9806618db67e44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GavelInteractable
-  returnSpeed: 8
+  returnSpeed: 4
   dragAngle: -45
   hoverDarken: 0.6
+  smashThreshold: 100
+  smashMinDistance: 0.7
+  smashAngle: 50
+  shakeDuration: 0.4
+  shakeMagnitude: 0.3
+  mainCamera: {fileID: 0}
