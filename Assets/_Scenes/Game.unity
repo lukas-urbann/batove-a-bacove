@@ -398,6 +398,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: GavelZone
       objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: -11.322449
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 0.42903113
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -13.693624
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -2.3404868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: -18.159
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -3.6545343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: -20.544308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: -3.5244462
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: -21.978022
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: -6.077486
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
+      value: -23.351925
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
+      value: -8.144655
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
+      value: 18.429955
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
+      value: -8.381291
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
+      value: 13.208672
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961745424411586630, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
+      value: 0.64030457
+      objectReference: {fileID: 0}
     - target: {fileID: 6263982479274246044, guid: 924fd3afdbc85964bac68bd4831ec855, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.52141
@@ -1930,6 +1998,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 972479881}
+    - target: {fileID: 520596783739550099, guid: f9fb681c77ec9fc428aab474e0754edd, type: 3}
+      propertyPath: smashThreshold
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1493228094722429421, guid: f9fb681c77ec9fc428aab474e0754edd, type: 3}
       propertyPath: m_Name
       value: Gavel
