@@ -193,7 +193,8 @@ namespace Controllers
             {
                 onPoorAgree?.Invoke();
             }
-            else if (_currentBiasCase.rich > 0)
+            
+            if (_currentBiasCase.rich > 0)
             {
                 onRichAgree?.Invoke();
             }
