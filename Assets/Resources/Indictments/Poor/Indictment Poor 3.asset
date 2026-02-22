@@ -10,26 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
-  m_Name: TestOdsouzeni 2
+  m_Name: Indictment Poor 3
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-<<<<<<< Updated upstream
-  text: "Ob\u017Ealovan\xFD byl spat\u0159en jak se podez\u0159ele pl\xED\u017E\xED
-    okolo {0}"
+  text: "Obvin\u011Bn\xFD je podez\u0159el\xFD, \u017Ee sn\u011Bdl {0} sad {1}\u016F
+    z {2}."
   FillerWordsList:
+  - possibleFillTags:
+    - {fileID: 11400000, guid: 091f455f5a8f1e94da106dcb5ea55ed0, type: 2}
   - possibleFillTags:
     - {fileID: 11400000, guid: 79a9890533333b14da547667102063ca, type: 2}
-  Biases:
-    poor: -0.1
-    rich: 0
-=======
-  text: "U {0} obvin\u011Bn\xE9ho byla nalezena {1} v jej\xEDm {2}."
-  FillerWordsList:
   - possibleFillTags:
-    - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
-  - possibleFillTags:
-    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
+    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
     - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
+    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
   Biases:
-    poor: -0.236
-    rich: 0.178
->>>>>>> Stashed changes
+    poor: 0.204
+    rich: -0.107
