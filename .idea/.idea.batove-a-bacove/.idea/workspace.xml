@@ -9,7 +9,10 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="" />
+    <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Responses/Response 16.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Responses/Response 16.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Font/MedievalSharp-Regular SDF (Dialog).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Font/MedievalSharp-Regular SDF (Dialog).asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
