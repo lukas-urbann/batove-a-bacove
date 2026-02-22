@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -41,6 +43,11 @@ public class AudioManager : MonoBehaviour
     
     [SerializeField] private AudioClip backgroundMusic;
 
+    [SerializeField] private AudioClip voiceLineExec1;
+    [SerializeField] private AudioClip voiceLineExec2;
+    [SerializeField] private AudioClip voiceLineExec3;
+    [SerializeField] private float execVoicePitch = 0.75f;
+
     private void Awake()
     {
         if (Instance != null) { Destroy(gameObject); return; }
@@ -83,29 +90,43 @@ public class AudioManager : MonoBehaviour
     public void PlayLoseGame()    => sfxSource.PlayOneShot(loseGame);
     */
     
-    public void PlayVoiceLine(int lineNumber)
-    {
-        int randomLineNumber = Random.Range(1, 8);
-    
-        AudioClip clipToPlay = randomLineNumber switch
-        {
-            1 => voiceLine1,
-            2 => voiceLine2,
-            3 => voiceLine3,
-            4 => voiceLine4,
-            5 => voiceLine5,
-            6 => voiceLine6,
-            7 => voiceLine7,
-            _ => null
-        };
+    private Queue<AudioClip> _voiceQueue = new Queue<AudioClip>();
 
-        if (clipToPlay != null)
+    private AudioClip[] AllVoiceLines() => new[] { 
+        voiceLine1, voiceLine2, voiceLine3, voiceLine4, voiceLine5, voiceLine6, voiceLine7 
+    };
+
+    public void PlayVoiceLine()
+    {
+        if (_voiceQueue.Count == 0)
         {
-            voiceSource.pitch = Random.Range(minPitch, maxPitch);
-            voiceSource.PlayOneShot(clipToPlay);
+            foreach (var clip in AllVoiceLines().OrderBy(_ => Random.value))
+            {
+                _voiceQueue.Enqueue(clip);
+            }
         }
+        voiceSource.pitch = Random.Range(minPitch, maxPitch);
+        voiceSource.PlayOneShot(_voiceQueue.Dequeue());
     }
     
+    private Queue<AudioClip> _execVoiceQueue = new Queue<AudioClip>();
+
+    private AudioClip[] AllExecVoiceLines() => new[] { 
+        voiceLineExec1, voiceLineExec2, voiceLineExec3
+    };
     
+    public void PlayExecVoiceLine()
+    {
+        if (_execVoiceQueue.Count == 0)
+        {
+            foreach (var clip in AllExecVoiceLines().OrderBy(_ => Random.value))
+            {
+                _execVoiceQueue.Enqueue(clip);
+            }
+        }
+
+        voiceSource.pitch = execVoicePitch;
+        voiceSource.PlayOneShot(_execVoiceQueue.Dequeue());
+    }
 
 }

@@ -1953,6 +1953,18 @@ PrefabInstance:
       propertyPath: minPitch
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 7129817100921892840, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
+      propertyPath: voiceLineExec1
+      value: 
+      objectReference: {fileID: 8300000, guid: eb56c3e2267a49d40a59b0b1c68036a7, type: 3}
+    - target: {fileID: 7129817100921892840, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
+      propertyPath: voiceLineExec2
+      value: 
+      objectReference: {fileID: 8300000, guid: e79623f156194de4599bbcc31aa8f9fe, type: 3}
+    - target: {fileID: 7129817100921892840, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
+      propertyPath: voiceLineExec3
+      value: 
+      objectReference: {fileID: 8300000, guid: b9b82f36e7a7f204b96f706141a427b7, type: 3}
     - target: {fileID: 7285484817017064434, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.8864

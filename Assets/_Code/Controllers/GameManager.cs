@@ -157,6 +157,7 @@ namespace Controllers
             var judgedType = (JudgedType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(JudgedType)).Length);
             var d = DialogueManager.Instance.CreateNewDialogue(judgedType);
             onJudgedReady?.Invoke();
+            AudioManager.Instance.PlayExecVoiceLine();
             sentenceWriter.WriteSentence(d.Excerpt.Item1);
             StartCoroutine(ResponseWriteDelay(d.Response.text));
             _currentBiasCase = d.Bias;
@@ -236,7 +237,7 @@ namespace Controllers
         private IEnumerator ResponseWriteDelay(string response)
         {
             yield return new WaitForSeconds(responseTime);
-            AudioManager.Instance.PlayVoiceLine(1);
+            AudioManager.Instance.PlayVoiceLine();
             responseWriter.WriteSentence(response);
             
             // sance ze se pri vypovedi pokusi podplatit
