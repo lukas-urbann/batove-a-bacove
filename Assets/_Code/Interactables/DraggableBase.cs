@@ -11,6 +11,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] protected float returnSpeed = 4f;
     [SerializeField] protected float hoverDarken = 0.6f;
     
+    
     private Vector3 InitialPosition { get; set; }
     private Quaternion InitialRotation { get;  set; }
     protected SpriteRenderer Renderer { get; private set; }

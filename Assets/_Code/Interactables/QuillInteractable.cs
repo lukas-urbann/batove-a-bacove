@@ -57,6 +57,7 @@ public class QuillInteractable : DraggableBase
         _currentPoints.Add(tipPos);
         _currentLine.positionCount = _currentPoints.Count;
         _currentLine.SetPositions(_currentPoints.ToArray());
+        AudioManager.Instance.PlayQuillDraw();
     }
 
     private void FinishLine()
@@ -69,5 +70,11 @@ public class QuillInteractable : DraggableBase
     {
         base.OnDragEnd();
         if (_activeZone != null) FinishLine();
+    }
+
+    protected override void OnDragStart()
+    {
+        AudioManager.Instance.PlayQuillPickup();
+        base.OnDragStart();
     }
 }

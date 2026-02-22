@@ -17,8 +17,7 @@ public class GavelInteractable : DraggableBase
     [SerializeField] private Color invalidColor = new Color(1f, 0.3f, 0.3f);
     [SerializeField] private Color validColor = new Color(0.3f, 1f, 0f);
     [SerializeField] private PaperInteractable paper;
-
-    //[SerializeField] private AudioClip smashSound;
+    
 
     private bool _isSmashed;
     private float _previousY;
@@ -98,10 +97,14 @@ public class GavelInteractable : DraggableBase
     {
         if (GameState.Instance.CanGavel())
         {
+            AudioManager.Instance.PlayGavelSmash();
             GameState.Instance.FinalizeDecision();
             paper.OnDecisionFinalized();
         }
-        
+        else
+        {
+            AudioManager.Instance.PlayGavelSmashWeak();
+        }
         StartCoroutine(ShakeCamera());
         StartCoroutine(SmashDelay());
     }

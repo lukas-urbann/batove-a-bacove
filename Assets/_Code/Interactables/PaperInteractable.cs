@@ -52,6 +52,7 @@ public class PaperInteractable : InteractableBase
 
     private IEnumerator SlideOffAndBack()
     {
+        AudioManager.Instance.PlayPaperSlide();
         Vector3 offScreen = new Vector3(_initialPosition.x, offScreenY, _initialPosition.z);
     
         while (Vector3.Distance(transform.position, offScreen) > 0.01f)
