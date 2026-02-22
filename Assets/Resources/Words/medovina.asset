@@ -16,3 +16,4 @@ MonoBehaviour:
     weight: 0.65
   Tags:
   - {fileID: 11400000, guid: fe89b84911e906045bf7e9a7b8f066cb, type: 2}
+  - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
