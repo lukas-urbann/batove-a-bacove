@@ -12,8 +12,19 @@
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Code/HappinessReaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/HappinessReaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_hrad.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_hrad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_hrad.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_hrad.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_vesnice.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_vesnice.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_vesnice.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze2_vesnice.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_hrad.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_hrad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_hrad.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_hrad.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_vesnice.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_vesnice.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_vesnice.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze3_vesnice.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_hrad.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_hrad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_hrad.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_hrad.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_vesnice.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_vesnice.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_vesnice.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Window/faze4_vesnice.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

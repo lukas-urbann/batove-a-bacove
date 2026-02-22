@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9257504d730e08644a37781ff617ff8d
+guid: 86da2b31b66525747bf69c6f7df8736e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1960114071277384431
-    second: faze2_vesnice_0
+      213: 4262094922866515155
+    second: faze5_hrad_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: faze2_vesnice_0
+      name: faze5_hrad_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
+        x: 7
+        y: 0
         width: 444
-        height: 851
+        height: 850
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe2bbb9dc59b33b10800000000000000
-      internalID: 1960114071277384431
+      spriteID: 3dc547430c0062b30800000000000000
+      internalID: 4262094922866515155
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      faze2_vesnice_0: 1960114071277384431
+      faze5_hrad_0: 4262094922866515155
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
