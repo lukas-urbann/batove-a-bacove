@@ -16,5 +16,5 @@ MonoBehaviour:
     dal p\u011Bst\xED."
   FillerWordsList: []
   Biases:
-    poor: 0
+    poor: 0.084
     rich: 0

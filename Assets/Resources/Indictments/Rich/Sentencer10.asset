@@ -12,13 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Sentencer10
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "V lese ob\u011Btoval {0} kv\u016Fli {1}."
+  text: "V lese ob\u011Btoval {0} kv\u016Fli d\u016Fchodu."
   FillerWordsList:
   - possibleFillTags:
     - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
-  - possibleFillTags:
-    - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
-    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
   Biases:
     poor: -0.187
     rich: 0.134

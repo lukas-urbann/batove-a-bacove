@@ -201,11 +201,11 @@ namespace Controllers
 
             if (forConviction)
             {
-                AddCoins(2);
+                AddCoins(4);
             }
             else
             {
-                AddCoins(1);
+                AddCoins(3);
             }
         }
 
