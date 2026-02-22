@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5337161966523637530, guid: cafb77eb63698c847bc381ff583d528c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5337161966523637530, guid: cafb77eb63698c847bc381ff583d528c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -375,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544881956887644205, guid: cafb77eb63698c847bc381ff583d528c, type: 3}
       propertyPath: far clip plane
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7544881956887644205, guid: cafb77eb63698c847bc381ff583d528c, type: 3}
       propertyPath: near clip plane
@@ -553,9 +553,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2721874923210745780, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5121627660565430336, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
       propertyPath: m_Name
       value: GameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360052063034688103, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7666848156329547073, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
       propertyPath: m_Pivot.x
