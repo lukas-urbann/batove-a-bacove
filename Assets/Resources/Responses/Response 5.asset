@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Response 5
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "V\u0160ICHNI ZBOHATL\xCDCI P\u016EJDOU DO PEKLA"
+  text: "Kdo v\xED, mo\u017En\xE1 to tak bylo... a co kdy\u017E ne?"
   FillerWordsList: []
   Biases:
     poor: 0
-    rich: -0.2
+    rich: 0
