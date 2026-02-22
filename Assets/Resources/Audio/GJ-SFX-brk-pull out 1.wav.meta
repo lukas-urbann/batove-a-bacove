@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Resources/Audio/GJ-SFX-brk-pull out 1.wav.meta
 guid: 5f93a776150348f46b22e8e8119321f9
+========
+guid: 2629096278b40e8498247aa665be55eb
+>>>>>>>> Stashed changes:Assets/Resources/Audio/Voices/kat-1.wav.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8

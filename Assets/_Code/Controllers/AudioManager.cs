@@ -47,7 +47,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip voiceLineExec2;
     [SerializeField] private AudioClip voiceLineExec3;
     [SerializeField] private AudioClip voiceLineExec4;
+<<<<<<< Updated upstream
     [SerializeField] private float execVoicePitch = 0.8f;
+=======
+    [SerializeField] private float execVoicePitch = 0.75f;
+>>>>>>> Stashed changes
 
     private void Awake()
     {

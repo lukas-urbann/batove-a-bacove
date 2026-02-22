@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Resources/Audio/GJ-SFX-brk-writing 1.wav.meta
 guid: 88cc612c66dc77d48857ae1f7582419a
+========
+guid: 565f31880aaa7e740818417b9e18ef81
+>>>>>>>> Stashed changes:Assets/Resources/Audio/Voices/kat-3.wav.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8
