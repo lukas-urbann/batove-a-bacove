@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f7e0749fda7c9d47b94d4661d9f9e9c, type: 3}
-  m_Name: pijan
+  m_Name: "ban\xE1n"
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueFillWord
   Weight:
-    weight: 0.35
+    weight: 0.57
   Tags:
-  - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
+  - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
+  - {fileID: 11400000, guid: 81b74580ac87a6f4eb73c9441e0f0ff5, type: 2}
