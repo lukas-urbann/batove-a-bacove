@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class PaperInteractable : InteractableBase
 {
@@ -12,11 +14,20 @@ public class PaperInteractable : InteractableBase
     private Vector3 _initialPosition;
     private Coroutine _slideCoroutine;
 
+    public GameObject clearPaperButton;
+    
     protected void Awake()
     {
         _initialPosition = transform.position;
     }
 
+    //Rychlej fix na samuv kod
+    public void Update()
+    {
+        clearPaperButton.SetActive(!GameState.Instance.isDragging);
+    }
+
+    //odebrano bo chceme at to je na klik
     protected override void OnClick()
     {
         /*
@@ -41,6 +52,7 @@ public class PaperInteractable : InteractableBase
 
     private IEnumerator SlideOffAndBack()
     {
+        AudioManager.Instance.PlayPaperSlide();
         Vector3 offScreen = new Vector3(_initialPosition.x, offScreenY, _initialPosition.z);
     
         while (Vector3.Distance(transform.position, offScreen) > 0.01f)

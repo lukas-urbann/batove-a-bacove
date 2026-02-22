@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: TestOdsouzeni 3
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Byl vid\u011Bn jak okradl \u017Eebr\xE1ka o gro\u0161!"
-  FillerWordsList: []
+  text: "Pot\xE1cel se po {0} s obna\u017Een\xFDm {1}."
+  FillerWordsList:
+  - possibleFillTags:
+    - {fileID: 11400000, guid: 79a9890533333b14da547667102063ca, type: 2}
+  - possibleFillTags:
+    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
+    - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
   Biases:
-    poor: -0.4
-    rich: 0
+    poor: 0.089
+    rich: -0.154

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
+  m_Name: TestOdsouzeni 8
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
+  text: "L\xE1kal nezletil\xE9 do pyramidov\xE9ho sch\xE9ma. Po\u0161kodil je finan\u010Dn\xED
+    negramotnost\xED. "
+  FillerWordsList: []
+  Biases:
+    poor: -0.204
+    rich: 0.1

@@ -11,6 +11,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] protected float returnSpeed = 4f;
     [SerializeField] protected float hoverDarken = 0.6f;
     
+    
     private Vector3 InitialPosition { get; set; }
     private Quaternion InitialRotation { get;  set; }
     protected SpriteRenderer Renderer { get; private set; }
@@ -42,20 +43,15 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _offset = transform.position - GetMouseWorldPos(eventData);
         OnDragStart();
+        GameState.Instance.isDragging = true;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        //if (!CanDrag()) return;
         transform.position = GetMouseWorldPos(eventData) + _offset;
-        OnDragAudio();
         OnDragging();
     }
-
-    public virtual void OnDragAudio()
-    {
-        
-    }
-    
     
     protected virtual bool CanDrag()
     {
@@ -65,7 +61,7 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         OnDragEnd();
-        
+        GameState.Instance.isDragging = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
+  m_Name: Sentence3
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
+  text: "Obvin\u011Bn\xFD je podez\u0159el\xFD, \u017Ee sn\u011Bdl {0}"
+  FillerWordsList:
+  - possibleFillTags:
+    - {fileID: 11400000, guid: 79a9890533333b14da547667102063ca, type: 2}
+  Biases:
+    poor: 0.119
+    rich: -0.278

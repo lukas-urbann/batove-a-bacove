@@ -21,7 +21,7 @@ namespace Controllers
         
         [Header("Timers")]
         [SerializeField] private float daySwitchTime = 4;
-        [SerializeField] private float workDayTime = 90;
+        public float workDayTime = 90;
         [SerializeField] private float responseTime = 2.5f;
         [SerializeField] private float noJudgedTimeout = 2f;
 
@@ -30,61 +30,53 @@ namespace Controllers
         [SerializeField] private float maxHappinessClamp = 1;
         
         [Header("Coins")]
-        private int _coins;
-        public int Coins
+        private int _coins = 30;
+        
+        public void AddCoins(int amount)
         {
-            get => _coins;
-            set
-            {
-                _coins += value;
-
-                if (_coins < 0)
-                {
-                    TriggerGameOver();
-                }
-            }
+            _coins += amount;
+            onCoinsUpdated?.Invoke(_coins);
         }
         
-        private float _poorPeopleHappiness;
-        private float PoorPeopleHappiness
+        private float _poorPeopleHappiness = 1;
+        
+        private float _richPeopleHappiness = 1;
+        
+        public void SetRichPeopleHappiness(float value)
         {
-            get => _poorPeopleHappiness;
-            set
-            {
-                if (value > maxHappinessClamp)
-                {
-                    _poorPeopleHappiness = (int)maxHappinessClamp;
-                }
-                else if (value < minHappinessClamp)
-                {
-                    _poorPeopleHappiness = minHappinessClamp;
-                }
-                else
-                {
-                    _poorPeopleHappiness += value;
-                }
-            }
+            _richPeopleHappiness = Mathf.Clamp(value, minHappinessClamp, maxHappinessClamp);
+            onRichHappinessUpdated?.Invoke(_richPeopleHappiness);
+            CheckHappinessStatus();
         }
         
-        private float _richPeopleHappiness;
-
-        private float RichPeopleHappiness
+        public void SetPoorPeopleHappiness(float value)
         {
-            get => _richPeopleHappiness;
-            set
+            _poorPeopleHappiness = Mathf.Clamp(value, minHappinessClamp, maxHappinessClamp);
+            onPoorHappinessUpdated?.Invoke(_poorPeopleHappiness);
+            CheckHappinessStatus();
+        }
+        
+        public void AddRichPeopleHappiness(float amount)
+        {
+            SetRichPeopleHappiness(_richPeopleHappiness + amount);
+        }
+        
+        public void AddPoorPeopleHappiness(float amount)
+        {
+            SetPoorPeopleHappiness(_poorPeopleHappiness + amount);
+        }
+
+        private void CheckHappinessStatus()
+        {
+            if (_poorPeopleHappiness <= minHappinessClamp)
             {
-                if (value > maxHappinessClamp)
-                {
-                    _richPeopleHappiness = (int)maxHappinessClamp;
-                }
-                else if (value < minHappinessClamp)
-                {
-                    _richPeopleHappiness = minHappinessClamp;
-                }
-                else
-                {
-                    _richPeopleHappiness += value;
-                }
+                Debug.Log("Poor people are unhappy");
+                TriggerGameOver();
+            }
+            else if (_richPeopleHappiness <= minHappinessClamp)
+            {
+                Debug.Log("Rich people are unhappy");
+                TriggerGameOver();
             }
         }
 
@@ -95,8 +87,23 @@ namespace Controllers
         //jen pro vizual, problikava to tam pri startu
         public GameObject hiddenPanelFirstStart;
 
+        //na moji obranu, projekt na tom nestojí
         public UnityEvent onJudgedReady;
         public UnityEvent onJudgedDismissed;
+        public UnityEvent onJudgedBribery;
+        public UnityEvent onGameOverTriggered;
+        public UnityEvent<float> onRichHappinessUpdated;
+        public UnityEvent<float> onPoorHappinessUpdated;
+        public UnityEvent<int> onCoinsUpdated;
+        public UnityEvent<JudgedType> newJudgedTypeReady;
+        public UnityEvent onNewDayTimerStarted;
+       
+        public UnityEvent onJudgedForConviction;
+        public UnityEvent onJudgedForDismissal;
+        
+        public UnityEvent onRichAgree;
+        public UnityEvent onPoorAgree;
+        
         
         private void Awake()
         {
@@ -113,13 +120,36 @@ namespace Controllers
         //jen jednou po vstupu do game sceny
         private void Start()
         {
+            AudioManager.Instance.PlayGavelDoubleSlow();
             AdvanceDay();
             StartCoroutine(HidePanelFirstStart());
+            onCoinsUpdated?.Invoke(_coins);
         }
 
         private void AdvanceDay()
         {
             DayManager.Instance.IncreaseDay();
+            
+            if (UnityEngine.Random.value < 0.5f)
+            {
+                AudioManager.Instance.PlayGavelDoubleFast();
+            }
+            else
+            {
+                AudioManager.Instance.PlayGavelDoubleSlow();
+            }
+
+            if (DayManager.Instance.Day > 1)
+            {
+                AddCoins(-50);
+                if (_coins<0)
+                {
+                    AudioManager.Instance.PlaySilenceVoiceLine();
+                    TriggerGameOver();
+                    return;
+                }
+            }
+            
             onJudgedDismissed?.Invoke();
             StartCoroutine(FirstJudgedTimeout());
         }
@@ -135,34 +165,87 @@ namespace Controllers
             var judgedType = (JudgedType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(JudgedType)).Length);
             var d = DialogueManager.Instance.CreateNewDialogue(judgedType);
             onJudgedReady?.Invoke();
+            AudioManager.Instance.PlayExecVoiceLine();
             sentenceWriter.WriteSentence(d.Excerpt.Item1);
             StartCoroutine(ResponseWriteDelay(d.Response.text));
             _currentBiasCase = d.Bias;
+            newJudgedTypeReady?.Invoke(judgedType);
         }
 
         public void JudgeResponse(bool forConviction)
         {
-            PoorPeopleHappiness += forConviction ? -_currentBiasCase.poor : _currentBiasCase.poor;
-            RichPeopleHappiness += forConviction ? -_currentBiasCase.rich : _currentBiasCase.rich;
-            Debug.Log($"Judged for {(forConviction ? "conviction" : "dismissal")}. Poor happiness: {PoorPeopleHappiness}, Rich happiness: {RichPeopleHappiness}");
+            if (forConviction)
+            {
+                onJudgedForConviction?.Invoke();
+            }
+            else
+            {
+                onJudgedForDismissal?.Invoke();
+            }
+
+            AddPoorPeopleHappiness(forConviction ? -_currentBiasCase.poor : _currentBiasCase.poor);
+            AddRichPeopleHappiness(forConviction ? -_currentBiasCase.rich : _currentBiasCase.rich);
+            Debug.Log($"Judged for {(forConviction ? "conviction" : "dismissal")}. Poor happiness: {_poorPeopleHappiness}, Rich happiness: {_richPeopleHappiness}");
             AfterJudging();
+            
+            //check if poor are happy with the decision
+            if (_currentBiasCase.poor > 0)
+            {
+                onPoorAgree?.Invoke();
+            }
+            
+            if (_currentBiasCase.rich > 0)
+            {
+                onRichAgree?.Invoke();
+            }
+
+            if (forConviction)
+            {
+                AddCoins(2);
+            }
+            else
+            {
+                AddCoins(1);
+            }
         }
 
         private void TriggerGameOver()
         {
-            
+            onGameOverTriggered?.Invoke();
+        }
+        
+        public void BriberyBias()
+        {
+            if (_currentBiasCase.rich > _currentBiasCase.poor)
+            {
+                AddRichPeopleHappiness(0.1f);
+                AddPoorPeopleHappiness(-0.3f);
+            }
+            else
+            {
+                AddRichPeopleHappiness(-0.3f);
+                AddPoorPeopleHappiness(0.1f);
+            }
+        }
+
+        private void ResetHappiness()
+        {
+            SetPoorPeopleHappiness(1);
+            SetRichPeopleHappiness(1);
         }
         
         //Timed
         private IEnumerator FirstJudgedTimeout()
         {
             yield return new WaitForSeconds(daySwitchTime);
+            ResetHappiness();
             StartCoroutine(InGameDayTimer());
             CreateNewJudged();
         }
 
         private IEnumerator InGameDayTimer()
         {
+            onNewDayTimerStarted?.Invoke();
             yield return new WaitForSeconds(workDayTime);
             AdvanceDay();
         }
@@ -182,7 +265,14 @@ namespace Controllers
         private IEnumerator ResponseWriteDelay(string response)
         {
             yield return new WaitForSeconds(responseTime);
+            AudioManager.Instance.PlayVoiceLine();
             responseWriter.WriteSentence(response);
+            
+            // sance ze se pri vypovedi pokusi podplatit
+            if (UnityEngine.Random.value < 0.2f)
+            {
+                onJudgedBribery?.Invoke();
+            }
         }
     }
 }

@@ -9,9 +9,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
+      propertyPath: dragAngle
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
       propertyPath: validZone
       value: 
       objectReference: {fileID: 4721918757733708283}
+    - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
+      propertyPath: smashAngle
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
+      propertyPath: validColor.r
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
+      propertyPath: invalidColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
+      propertyPath: invalidColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993113800013893602, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
+      propertyPath: invalidColor.r
+      value: 0.7529412
+      objectReference: {fileID: 0}
     - target: {fileID: 4181915694087284636, guid: 13ff7fa3de8a7f649ad506cd5c1f3300, type: 3}
       propertyPath: m_Name
       value: Gavel

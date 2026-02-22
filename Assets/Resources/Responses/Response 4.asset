@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Response 4
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "... mo\u017En\xE1?"
+  text: No i kdyby, tak co.
   FillerWordsList: []
   Biases:
     poor: 0

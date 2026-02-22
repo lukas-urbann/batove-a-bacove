@@ -12,6 +12,8 @@ public class GameState : MonoBehaviour
     private bool _leftHasInk;
     private bool _rightHasInk;
 
+    public bool isDragging = false;
+
     private void Awake()
     {
         Instance = this;

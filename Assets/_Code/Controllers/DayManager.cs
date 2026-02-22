@@ -31,14 +31,16 @@ namespace Controllers
         }
 
         private int _day = 0;
-        private int _toJudge = 0;
+        //private int _toJudge = 0;
 
+        public int Day => _day;
+        
         public void IncreaseDay()
         {
             _day++;
             OnNewDayStarted?.Invoke(_day);
             OnNewDay?.Invoke();
-            _toJudge = Mathf.Clamp(_day + Random.Range(0, highestPeopleIncrementPerDay), leastPeopleToJudge, mostPeopleToJudge);
+            //_toJudge = Mathf.Clamp(_day + Random.Range(0, highestPeopleIncrementPerDay), leastPeopleToJudge, mostPeopleToJudge);
         }
     }
 }

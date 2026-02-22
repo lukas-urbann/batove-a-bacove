@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
+  m_Name: TestOdsouzeni 9
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
+  text: "Soused zachytil zlod\u011Bje na bezpe\u010Dnostn\xED syst\xE9m, s vysok\xFDm
+    rozli\u0161en\xEDm. Je z\u0159ejm\xE9 \u017Ee ukradl {0}."
+  FillerWordsList:
+  - possibleFillTags:
+    - {fileID: 11400000, guid: 380517eb8727e6f41a146222e214eccc, type: 2}
+    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
+    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
+  Biases:
+    poor: 0
+    rich: -0.066

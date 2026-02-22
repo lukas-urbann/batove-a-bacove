@@ -13,8 +13,8 @@ namespace Dialogues
 
             Bias = new DialogueBias
             {
-                poor = excerpt.Item2.poor * response.Biases.poor,
-                rich = excerpt.Item2.rich * response.Biases.rich
+                poor = excerpt.Item2.poor + response.Biases.poor,
+                rich = excerpt.Item2.rich + response.Biases.rich
             };
         }
     }

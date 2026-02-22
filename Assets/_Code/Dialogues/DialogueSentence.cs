@@ -32,7 +32,7 @@ namespace Dialogues
                 var randomWord = RandomWord(DialogueManager.Instance.Words, w => w.Tags.Contains(tag));
                 bias.poor *= randomWord.Weight.weight;
                 bias.rich *= randomWord.Weight.weight;
-                return $"<i>{randomWord.name}</i>";
+                return $"<color=#241806>{randomWord.name}</color>";
             });
 
             return new DialogueExcerpt(filled, bias);
