@@ -112,6 +112,7 @@ namespace Controllers
         //jen jednou po vstupu do game sceny
         private void Start()
         {
+            AudioManager.Instance.PlayGavelDoubleSlow();
             AdvanceDay();
             StartCoroutine(HidePanelFirstStart());
             onCoinsUpdated?.Invoke(_coins);
@@ -120,12 +121,22 @@ namespace Controllers
         private void AdvanceDay()
         {
             DayManager.Instance.IncreaseDay();
+            
+            if (UnityEngine.Random.value < 0.5f)
+            {
+                AudioManager.Instance.PlayGavelDoubleFast();
+            }
+            else
+            {
+                AudioManager.Instance.PlayGavelDoubleSlow();
+            }
 
             if (DayManager.Instance.Day > 1)
             {
                 AddCoins(-50);
                 if (_coins<0)
                 {
+                    AudioManager.Instance.PlaySilenceVoiceLine();
                     TriggerGameOver();
                     return;
                 }
@@ -225,6 +236,7 @@ namespace Controllers
         private IEnumerator ResponseWriteDelay(string response)
         {
             yield return new WaitForSeconds(responseTime);
+            AudioManager.Instance.PlayVoiceLine(1);
             responseWriter.WriteSentence(response);
             
             // sance ze se pri vypovedi pokusi podplatit

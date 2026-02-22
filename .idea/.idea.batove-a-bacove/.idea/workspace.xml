@@ -11,11 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/BribeHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/BribeHand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/PaperInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/PaperInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/QuillInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/QuillInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Controllers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Controllers/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Controllers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Controllers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
