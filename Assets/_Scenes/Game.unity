@@ -713,6 +713,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8269662115071858010, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
+      propertyPath: m_text
+      value: "Po\u010Det dn\xED v roli soudce: 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269662115071858010, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1936,6 +1944,14 @@ PrefabInstance:
     - target: {fileID: 6490130614052994285, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
       propertyPath: m_Volume
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129817100921892840, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
+      propertyPath: maxPitch
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129817100921892840, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
+      propertyPath: minPitch
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7285484817017064434, guid: ed63d6d23ae55bd4891e1b3f9603767f, type: 3}
       propertyPath: m_LocalPosition.x

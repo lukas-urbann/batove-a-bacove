@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Indictment Poor 1
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Tento odsouzenec ukradl {0} sv\xE9mu sousedovi! "
+  text: Chudej okrada
   FillerWordsList:
   - possibleFillTags:
     - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
   Biases:
-    poor: -0.3
-    rich: 0.1
+    poor: 0.064
+    rich: -0.154

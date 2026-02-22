@@ -6,7 +6,7 @@ namespace Dialogues
     [Serializable]
     public class DialogueBias
     {
-        [Range(-1, 1)] public float poor;
-        [Range(-1, 1)] public float rich;
+        [Range(-0.3f, 0.3f)] public float poor;
+        [Range(-0.3f, 0.3f)] public float rich;
     }
 }

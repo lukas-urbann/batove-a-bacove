@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: TestOdsouzeni 2
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Tenhle nezaplatil gro\u0161e sv\xFDmu d\u011Bln\xEDkovi!"
+  text: "Bohatej okr\xE1d\xE1"
   FillerWordsList: []
   Biases:
-    poor: -0.4
-    rich: 0.7
+    poor: -0.096
+    rich: 0.021
