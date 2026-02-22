@@ -14,15 +14,20 @@ public class CameraScrollController : MonoBehaviour
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
 
-        Vector3 pos = transform.position;
         float mouseX = Mouse.current.position.ReadValue().x;
         float screenWidth = Screen.width;
-        
-        if (mouseX <= edgeThreshold) 
-            pos.x -= panSpeed * Time.deltaTime;
-        if (mouseX >= screenWidth - edgeThreshold) 
-            pos.x += panSpeed * Time.deltaTime;
-        
+        Vector3 pos = transform.position;
+
+        float direction = 0f;
+
+        if (mouseX <= edgeThreshold)
+            direction = -1f;
+        else if (mouseX >= screenWidth - edgeThreshold)
+            direction = 1f;
+
+        if ((direction < 0 && pos.x > leftLimit) || (direction > 0 && pos.x < rightLimit))
+            pos.x += direction * panSpeed * Time.deltaTime;
+
         pos.x = Mathf.Clamp(pos.x, leftLimit, rightLimit);
         transform.position = pos;
     }
