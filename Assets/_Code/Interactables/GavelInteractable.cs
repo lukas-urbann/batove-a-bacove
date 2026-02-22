@@ -19,14 +19,20 @@ public class GavelInteractable : DraggableBase
     [SerializeField] private Color validColor = new Color(0.3f, 1f, 0f);
     [SerializeField] private PaperInteractable paper;
     
+    [SerializeField] private Collider2D winZoneLeft;
+    [SerializeField] private Collider2D winZoneRight;
 
+    private bool IsInWinZone()
+    {
+        return (winZoneLeft.OverlapPoint(transform.position) || winZoneRight.OverlapPoint(transform.position));
+    }
+    
     private bool _isSmashed;
     private float _previousY;
     private float _dragStartY;
+    
 
-    public bool _isFinalPhase;
-
-    private void Update()
+    private void Update()   
     {
         base.Update();
         
@@ -36,7 +42,8 @@ public class GavelInteractable : DraggableBase
             float distance = _dragStartY - transform.position.y;
             _previousY = transform.position.y;
 
-            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance && IsInValidZone())
+            if (!_isSmashed && velocity > smashThreshold && distance > smashMinDistance && (IsInValidZone() 
+                    || ((HappinessReaction.IsFinalPhaseRich || HappinessReaction.IsFinalPhasePoor) && IsInWinZone())))
             {
                 _isSmashed = true;
                 transform.rotation = Quaternion.Euler(0, 0, smashAngle);
@@ -88,7 +95,7 @@ public class GavelInteractable : DraggableBase
     
     protected override bool CanDrag()
     {
-        return !_isSmashed && (_isFinalPhase || GameState.Instance.CanGavel());
+        return !_isSmashed && ((HappinessReaction.IsFinalPhaseRich || HappinessReaction.IsFinalPhasePoor) || GameState.Instance.CanGavel());
     }
     
     private bool CanSmash()
@@ -98,11 +105,11 @@ public class GavelInteractable : DraggableBase
 
     protected virtual void OnSmash()
     {
-        if (_isFinalPhase)
+        if ((HappinessReaction.IsFinalPhaseRich || HappinessReaction.IsFinalPhasePoor) && IsInWinZone())
         {
             AudioManager.Instance.PlayGavelSmash();
-            GameManager.Instance.AddRichPeopleHappiness(0.25f);
-            GameManager.Instance.AddPoorPeopleHappiness(0.25f);
+            GameManager.Instance.SetRichPeopleHappiness(0.25f);
+            GameManager.Instance.SetPoorPeopleHappiness(0.25f);
         }
         else if (GameState.Instance.CanGavel())
         {
@@ -123,7 +130,7 @@ public class GavelInteractable : DraggableBase
     {
         if (AnyDragging) return;
 
-        if (_isFinalPhase || GameState.Instance.CanGavel())
+        if ((HappinessReaction.IsFinalPhaseRich || HappinessReaction.IsFinalPhasePoor) || GameState.Instance.CanGavel())
             Renderer.color = OriginalColor * validColor;
         else
             Renderer.color = OriginalColor * invalidColor;
@@ -135,8 +142,4 @@ public class GavelInteractable : DraggableBase
         Renderer.color = OriginalColor;
     }
     
-    public void SetFinalPhase(bool active)
-    {
-        _isFinalPhase = active;
-    }
 }

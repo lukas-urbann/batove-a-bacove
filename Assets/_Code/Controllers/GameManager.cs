@@ -32,15 +32,21 @@ namespace Controllers
         [Header("Coins")]
         private int _coins = 30;
         
+        
         public void AddCoins(int amount)
         {
             _coins += amount;
             onCoinsUpdated?.Invoke(_coins);
         }
         
+        [SerializeField]
         private float _poorPeopleHappiness = 1;
-        
+        [SerializeField]
         private float _richPeopleHappiness = 1;
+        
+        
+        public float RichPeopleHappiness => _richPeopleHappiness;
+        public float PoorPeopleHappiness => _poorPeopleHappiness;
         
         public void SetRichPeopleHappiness(float value)
         {
@@ -246,4 +252,6 @@ namespace Controllers
             }
         }
     }
+    
+    
 }

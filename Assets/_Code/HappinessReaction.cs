@@ -18,6 +18,9 @@ public class HappinessReaction : MonoBehaviour
     public UnityEvent poorAngry;
     public UnityEvent poorVeryAngry;
     
+    public static bool IsFinalPhaseRich { get; private set; }
+    public static bool IsFinalPhasePoor { get; private set; }
+    
     private void Start()
     {
         GameManager.Instance.onRichHappinessUpdated.AddListener(EvaluateReactionRich);
@@ -32,6 +35,8 @@ public class HappinessReaction : MonoBehaviour
     
     private void EvaluateReactionRich(float val)
     {
+        IsFinalPhaseRich = val < 0.2f;
+        
         if (val >= 0.8f)
         {
             richVeryHappy.Invoke();
@@ -47,6 +52,7 @@ public class HappinessReaction : MonoBehaviour
         else if (val >= 0.2f)
         {
             richAngry.Invoke();
+            
         }
         else
         {
@@ -56,6 +62,9 @@ public class HappinessReaction : MonoBehaviour
     
     private void EvaluateReactionPoor(float val)
     {
+        
+        IsFinalPhasePoor = val < 0.2f;
+        
         if (val >= 0.8f)
         {
             poorVeryHappy.Invoke();
@@ -77,4 +86,5 @@ public class HappinessReaction : MonoBehaviour
             poorVeryAngry.Invoke();
         }
     }
+  
 }
