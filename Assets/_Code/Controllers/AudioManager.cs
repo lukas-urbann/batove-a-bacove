@@ -10,8 +10,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource voiceSource;
-    [SerializeField] private float minPitch = 0.5f;
-    [SerializeField] private float maxPitch = 1.5f;
+    [SerializeField] private float minPitch = 0.8f;
+    [SerializeField] private float maxPitch = 1.3f;
 
 
     [SerializeField] private AudioClip gavelSmash;
@@ -46,7 +46,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip voiceLineExec1;
     [SerializeField] private AudioClip voiceLineExec2;
     [SerializeField] private AudioClip voiceLineExec3;
-    [SerializeField] private float execVoicePitch = 0.75f;
+    [SerializeField] private AudioClip voiceLineExec4;
+    [SerializeField] private float execVoicePitch = 0.8f;
 
     private void Awake()
     {
@@ -112,7 +113,7 @@ public class AudioManager : MonoBehaviour
     private Queue<AudioClip> _execVoiceQueue = new Queue<AudioClip>();
 
     private AudioClip[] AllExecVoiceLines() => new[] { 
-        voiceLineExec1, voiceLineExec2, voiceLineExec3
+        voiceLineExec1, voiceLineExec2, voiceLineExec3, voiceLineExec4
     };
     
     public void PlayExecVoiceLine()

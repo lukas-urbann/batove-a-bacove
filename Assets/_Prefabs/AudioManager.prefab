@@ -50,8 +50,8 @@ MonoBehaviour:
   sfxSource: {fileID: 125265178597507482}
   musicSource: {fileID: 6490130614052994285}
   voiceSource: {fileID: 3283371869491490408}
-  minPitch: 0.5
-  maxPitch: 1.5
+  minPitch: 0.9
+  maxPitch: 1.1
   gavelSmash: {fileID: 8300000, guid: b201eadef6450fc40884377b7b3edf5f, type: 3}
   gavelSmashWeak: {fileID: 8300000, guid: 8e165874495074c4dbca3972348359ca, type: 3}
   quillPickup: {fileID: 8300000, guid: 8e0b2b0fb9feb3a4a806e5e66f4db055, type: 3}
@@ -69,6 +69,12 @@ MonoBehaviour:
   voiceLine6: {fileID: 8300000, guid: 73f1f0f25dbd95045b4cf6c31de5122b, type: 3}
   voiceLine7: {fileID: 8300000, guid: 142cad9ebc4b6a34094aa162b5afb3d3, type: 3}
   backgroundMusic: {fileID: 8300000, guid: 2a5bc6daff9e8674fa8018c42b31699f, type: 3}
+  voiceLineExec1: {fileID: 8300000, guid: 2629096278b40e8498247aa665be55eb, type: 3}
+  voiceLineExec2: {fileID: 8300000, guid: 4660f021807ce154fae2a5eb2d404032, type: 3}
+  voiceLineExec3: {fileID: 8300000, guid: 565f31880aaa7e740818417b9e18ef81, type: 3}
+  voiceLineExec4: {fileID: 8300000, guid: 454444019deeff74dbcc95d2fdb39f36, type: 3}
+  execVoicePitch: 0.75
+  execVoiceVolume: 1
 --- !u!82 &125265178597507482
 AudioSource:
   m_ObjectHideFlags: 0
@@ -179,7 +185,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
