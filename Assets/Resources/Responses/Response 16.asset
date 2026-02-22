@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Response 16
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Fuck the domobrana comin' straight from the Karl\u016Fv most"
+  text: "F**k the domobrana comin' straight from the Karl\u016Fv most"
   FillerWordsList: []
   Biases:
     poor: -0.1

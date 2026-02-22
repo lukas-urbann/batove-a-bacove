@@ -87,6 +87,7 @@ namespace Controllers
         //jen pro vizual, problikava to tam pri startu
         public GameObject hiddenPanelFirstStart;
 
+        //na moji obranu, projekt na tom nestojí
         public UnityEvent onJudgedReady;
         public UnityEvent onJudgedDismissed;
         public UnityEvent onJudgedBribery;
@@ -96,6 +97,9 @@ namespace Controllers
         public UnityEvent<int> onCoinsUpdated;
         public UnityEvent<JudgedType> newJudgedTypeReady;
         public UnityEvent onNewDayTimerStarted;
+       
+        public UnityEvent onJudgedForConviction;
+        public UnityEvent onJudgedForDismissal;
         
         private void Awake()
         {
@@ -166,6 +170,15 @@ namespace Controllers
 
         public void JudgeResponse(bool forConviction)
         {
+            if (forConviction)
+            {
+                onJudgedForConviction?.Invoke();
+            }
+            else
+            {
+                onJudgedForDismissal?.Invoke();
+            }
+
             AddPoorPeopleHappiness(forConviction ? -_currentBiasCase.poor : _currentBiasCase.poor);
             AddRichPeopleHappiness(forConviction ? -_currentBiasCase.rich : _currentBiasCase.rich);
             Debug.Log($"Judged for {(forConviction ? "conviction" : "dismissal")}. Poor happiness: {_poorPeopleHappiness}, Rich happiness: {_richPeopleHappiness}");
@@ -173,11 +186,11 @@ namespace Controllers
 
             if (forConviction)
             {
-                AddCoins(3);
+                AddCoins(2);
             }
             else
             {
-                AddCoins(2);
+                AddCoins(1);
             }
         }
 
@@ -191,11 +204,11 @@ namespace Controllers
             if (_currentBiasCase.rich > _currentBiasCase.poor)
             {
                 AddRichPeopleHappiness(0.1f);
-                AddPoorPeopleHappiness(-0.2f);
+                AddPoorPeopleHappiness(-0.3f);
             }
             else
             {
-                AddRichPeopleHappiness(-0.2f);
+                AddRichPeopleHappiness(-0.3f);
                 AddPoorPeopleHappiness(0.1f);
             }
         }
