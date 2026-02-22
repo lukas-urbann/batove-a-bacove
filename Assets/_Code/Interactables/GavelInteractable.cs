@@ -101,7 +101,7 @@ public class GavelInteractable : DraggableBase
             GameState.Instance.FinalizeDecision();
             paper.OnDecisionFinalized();
         }
-        
+        AudioManager.Instance.PlayGavelSmash();
         StartCoroutine(ShakeCamera());
         StartCoroutine(SmashDelay());
     }

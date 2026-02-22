@@ -42,15 +42,20 @@ public class DraggableBase : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _offset = transform.position - GetMouseWorldPos(eventData);
         OnDragStart();
-        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //if (!CanDrag()) return;
         transform.position = GetMouseWorldPos(eventData) + _offset;
+        OnDragAudio();
         OnDragging();
     }
+
+    public virtual void OnDragAudio()
+    {
+        
+    }
+    
     
     protected virtual bool CanDrag()
     {

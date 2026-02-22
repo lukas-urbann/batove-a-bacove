@@ -610,6 +610,16 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!82 &656285971 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1311957684656960919, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+  m_PrefabInstance: {fileID: 1376319985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &656285972 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8184044726842795673, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+  m_PrefabInstance: {fileID: 1376319985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941022545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1100,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1311957684656960919, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1416799512053103481, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
       propertyPath: OnNewDay.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1170,6 +1184,34 @@ PrefabInstance:
       propertyPath: onJudgedDismissed.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1053626574}
+    - target: {fileID: 7696980525672063739, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: quillDraw
+      value: 
+      objectReference: {fileID: 8300000, guid: 88cc612c66dc77d48857ae1f7582419a, type: 3}
+    - target: {fileID: 7696980525672063739, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: sfxSource
+      value: 
+      objectReference: {fileID: 656285972}
+    - target: {fileID: 7696980525672063739, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: gavelSmash
+      value: 
+      objectReference: {fileID: 8300000, guid: 227f6edaf697fe04bac0e00b7fe6e04a, type: 3}
+    - target: {fileID: 7696980525672063739, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: paperSlide
+      value: 
+      objectReference: {fileID: 8300000, guid: 7296086dc30f7bf47acb4ecb216228e1, type: 3}
+    - target: {fileID: 7696980525672063739, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 656285971}
+    - target: {fileID: 7696980525672063739, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: quillPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f93a776150348f46b22e8e8119321f9, type: 3}
+    - target: {fileID: 7696980525672063739, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c72077e071c09c44a19726c255cd00a, type: 3}
     - target: {fileID: 7829177767119571885, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
       propertyPath: m_Name
       value: Managers

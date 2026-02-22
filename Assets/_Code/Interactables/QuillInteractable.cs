@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -13,10 +14,26 @@ public class QuillInteractable : DraggableBase
     private LineRenderer _currentLine;
     private List<Vector3> _currentPoints = new List<Vector3>();
     private VoteZone _activeZone;
+
+
+    public override void OnDragAudio()
+    {
+        if (_activeZone != null)
+        {
+            AudioManager.Instance.PlayQuillDraw();
+        }
+        
+    }
     
+    protected override void OnDragStart()
+    {
+        base.OnDragStart();
+        AudioManager.Instance.PlayQuillPickup();
+    }
 
     protected override void OnDragging()
     {
+        
         VoteZone zone = GetCurrentZone();
 
         if (zone != null)
@@ -39,16 +56,6 @@ public class QuillInteractable : DraggableBase
         return null;
     }
 
-    private void StartNewLine(VoteZone zone)
-    {
-        _activeZone = zone;
-        _currentPoints.Clear();
-        GameObject inkObj = Instantiate(inkPrefab, paper.transform, true);
-        _currentLine = inkObj.GetComponent<LineRenderer>();
-        _currentLine.useWorldSpace = true;
-        zone.AddInkLine(inkObj);
-    }
-
     private void AddPoint(Vector3 pos)
     {
         Vector3 tipPos = quillTip.position;
@@ -57,13 +64,34 @@ public class QuillInteractable : DraggableBase
         _currentPoints.Add(tipPos);
         _currentLine.positionCount = _currentPoints.Count;
         _currentLine.SetPositions(_currentPoints.ToArray());
+        
+    }
+    
+    private Coroutine _drawLoopCoroutine;
+
+    private void StartNewLine(VoteZone zone)
+    {
+        _activeZone = zone;
+        _currentPoints.Clear();
+        GameObject inkObj = Instantiate(inkPrefab, paper.transform, true);
+        _currentLine = inkObj.GetComponent<LineRenderer>();
+        _currentLine.useWorldSpace = true;
+        zone.AddInkLine(inkObj);
+
+        if (_drawLoopCoroutine != null) StopCoroutine(_drawLoopCoroutine);
     }
 
     private void FinishLine()
     {
+        if (_drawLoopCoroutine != null)
+        {
+            StopCoroutine(_drawLoopCoroutine);
+            _drawLoopCoroutine = null;
+        }
         _activeZone = null;
         _currentLine = null;
     }
+    
 
     protected override void OnDragEnd()
     {

@@ -45,6 +45,7 @@ public class PaperInteractable : InteractableBase
     
         while (Vector3.Distance(transform.position, offScreen) > 0.01f)
         {
+            AudioManager.Instance.PlayPaperSlide();
             Vector3 prev = transform.position;
             transform.position = Vector3.Lerp(transform.position, offScreen, Time.deltaTime * slideSpeed);
             Vector3 delta = transform.position - prev;

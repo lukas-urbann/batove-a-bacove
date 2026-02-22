@@ -11,11 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/DraggableBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/PaperInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/PaperInteractable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/QuillInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/QuillInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Prefabs/InkwellObj.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Users/_Sam/_Scenes/untitled.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Font/MedievalSharp-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Font/MedievalSharp-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Managers.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Managers.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Managers.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Managers.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +43,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Code/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Controllers/DayManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Controllers/EventBus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Controllers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Code/Controllers/GameState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Code/DayCountDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Dialogues/Dialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Code/Dialogues/DialogueBias.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,6 +65,7 @@
     <commands />
     <urls />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -139,6 +144,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
