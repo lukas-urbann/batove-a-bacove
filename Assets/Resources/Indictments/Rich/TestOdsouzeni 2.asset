@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "Bohatej okr\xE1d\xE1"
   FillerWordsList: []
   Biases:
-    poor: -0.096
-    rich: 0.021
+    poor: -0.1
+    rich: 0.1
