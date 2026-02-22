@@ -28,6 +28,7 @@ namespace Dialogues
             
             string filled = ResolveTemplate(text, i =>
             {
+                if (i >= FillerWordsList.Count || FillerWordsList[i].possibleFillTags.Length == 0) return string.Empty;
                 var tag = FillerWordsList[i].possibleFillTags[UnityEngine.Random.Range(0, FillerWordsList[i].possibleFillTags.Length)];
                 var randomWord = RandomWord(DialogueManager.Instance.Words, w => w.Tags.Contains(tag));
                 bias.poor *= randomWord.Weight.weight;
