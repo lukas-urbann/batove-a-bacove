@@ -2305,7 +2305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2633307677135084045, guid: 86eee0b946529b447875bf2aed0372fc, type: 3}
       propertyPath: richSprites.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2633307677135084045, guid: 86eee0b946529b447875bf2aed0372fc, type: 3}
       propertyPath: 'poorSprites.Array.data[1]'
@@ -2375,6 +2375,10 @@ PrefabInstance:
       propertyPath: 'richSprites.Array.data[8]'
       value: 
       objectReference: {fileID: -2590085644142840218, guid: 7f7e99d6149fd8044a1acc00c1699832, type: 3}
+    - target: {fileID: 2633307677135084045, guid: 86eee0b946529b447875bf2aed0372fc, type: 3}
+      propertyPath: 'richSprites.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1573441418093866826, guid: 947c3ba2b9ef74b4db09cb53f2cb37a0, type: 3}
     - target: {fileID: 2633307677135084045, guid: 86eee0b946529b447875bf2aed0372fc, type: 3}
       propertyPath: 'poorSprites.Array.data[10]'
       value: 
