@@ -101,6 +101,10 @@ namespace Controllers
         public UnityEvent onJudgedForConviction;
         public UnityEvent onJudgedForDismissal;
         
+        public UnityEvent onRichAgree;
+        public UnityEvent onPoorAgree;
+        
+        
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -183,6 +187,16 @@ namespace Controllers
             AddRichPeopleHappiness(forConviction ? -_currentBiasCase.rich : _currentBiasCase.rich);
             Debug.Log($"Judged for {(forConviction ? "conviction" : "dismissal")}. Poor happiness: {_poorPeopleHappiness}, Rich happiness: {_richPeopleHappiness}");
             AfterJudging();
+            
+            //check if poor are happy with the decision
+            if (_currentBiasCase.poor > 0)
+            {
+                onPoorAgree?.Invoke();
+            }
+            else if (_currentBiasCase.rich > 0)
+            {
+                onRichAgree?.Invoke();
+            }
 
             if (forConviction)
             {

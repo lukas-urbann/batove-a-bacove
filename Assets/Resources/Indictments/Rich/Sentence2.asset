@@ -12,13 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Sentence2
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "U obvin\u011Bn\xE9ho byla nalezena {1}"
+  text: "U obvin\u011Bn\xE9ho byla nalezena {0}"
   FillerWordsList:
   - possibleFillTags:
     - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
-  - possibleFillTags:
-    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
-    - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
   Biases:
     poor: 0
     rich: -0.048
