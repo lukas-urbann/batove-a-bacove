@@ -833,8 +833,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 229.29346, y: 26.220093}
-  m_SizeDelta: {x: -458.5869, y: 33.0197}
+  m_AnchoredPosition: {x: 159.47034, y: 44.082397}
+  m_SizeDelta: {x: -318.9407, y: 63.3729}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002482220
 MonoBehaviour:
@@ -856,8 +856,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Jam Zl\xEDn 2026\nLuk\xE1\u0161 Urban, Samuel Slovak, \u0160t\u011Bp\xE1n
-    K\u0159ikava a spol"
+  m_text: "Game Jam Zl\xEDn 2026\n------\nLuk\xE1\u0161 Urban\nSamuel Slovak\n\u0160t\u011Bp\xE1n
+    K\u0159ikava\nTereza Stella Majt\xE1nov\xE1\nVeronika Sm\xE9kalov\xE1\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e2780f430ea4594ea24601283d91998, type: 2}
   m_sharedMaterial: {fileID: -2303667193071821867, guid: 6e2780f430ea4594ea24601283d91998, type: 2}
@@ -884,8 +884,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.2
-  m_fontSizeBase: 21.2
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
