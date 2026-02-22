@@ -36,7 +36,7 @@ public class BribeHand : MonoBehaviour
     {
         GameManager.Instance.JudgeResponse(false);
         AudioManager.Instance.PlayBribeTake();
-        int bribeAmount = UnityEngine.Random.Range(2, 7);
+        int bribeAmount = UnityEngine.Random.Range(5, 16);
         GameManager.Instance.AddCoins(bribeAmount);
         GameManager.Instance.BriberyBias();
     }
