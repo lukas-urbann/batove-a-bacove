@@ -5183,6 +5183,10 @@ PrefabInstance:
       propertyPath: panSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2532818345368038259, guid: cafb77eb63698c847bc381ff583d528c, type: 3}
+      propertyPath: edgeThreshold
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5337161966523637530, guid: cafb77eb63698c847bc381ff583d528c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5485,7 +5489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2721874923210745780, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2769199896092915759, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5526,6 +5530,10 @@ PrefabInstance:
     - target: {fileID: 5383913723355020214, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613945133586685511, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
+      propertyPath: m_text
+      value: "30 gro\u0161\u016F"
       objectReference: {fileID: 0}
     - target: {fileID: 6262771870824248579, guid: 7729a8533e81b284fbcd0e16728adbd6, type: 3}
       propertyPath: m_SizeDelta.x
