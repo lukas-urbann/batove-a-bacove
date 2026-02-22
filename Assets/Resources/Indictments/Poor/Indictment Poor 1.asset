@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Indictment Poor 1
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: Chudej okrada
+  text: "Ob\u017Ealovan\xFD se pokusil kr\xE1st {0} za b\xEDl\xE9ho dne na tr\u017Ei\u0161ti."
   FillerWordsList:
   - possibleFillTags:
+    - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
     - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
+    - {fileID: 11400000, guid: fe89b84911e906045bf7e9a7b8f066cb, type: 2}
+    - {fileID: 11400000, guid: 81b74580ac87a6f4eb73c9441e0f0ff5, type: 2}
   Biases:
-    poor: 0.1
+    poor: -0.039
     rich: -0.1
