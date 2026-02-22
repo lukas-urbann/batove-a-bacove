@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
 
 public class CameraScrollController : MonoBehaviour
 {
@@ -11,9 +10,6 @@ public class CameraScrollController : MonoBehaviour
 
     void Update()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            return;
-
         float mouseX = Mouse.current.position.ReadValue().x;
         float screenWidth = Screen.width;
         Vector3 pos = transform.position;

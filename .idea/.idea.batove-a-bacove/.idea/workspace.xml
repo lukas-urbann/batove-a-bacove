@@ -89,7 +89,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Desktop/bab2\Bacove a Batove.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/bab4\Bacove a Batove.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\lukas\Desktop\testbuild" />
       <option name="PASS_PARENT_ENVS" value="1" />

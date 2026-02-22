@@ -169,6 +169,8 @@ namespace Controllers
             sentenceWriter.WriteSentence(d.Excerpt.Item1);
             StartCoroutine(ResponseWriteDelay(d.Response.text));
             _currentBiasCase = d.Bias;
+            _currentBiasCase.poor *= 2;
+            _currentBiasCase.rich *= 2;
             newJudgedTypeReady?.Invoke(judgedType);
         }
 
@@ -201,11 +203,11 @@ namespace Controllers
 
             if (forConviction)
             {
-                AddCoins(4);
+                AddCoins(2);
             }
             else
             {
-                AddCoins(3);
+                AddCoins(2);
             }
         }
 
@@ -219,11 +221,11 @@ namespace Controllers
             if (_currentBiasCase.rich > _currentBiasCase.poor)
             {
                 AddRichPeopleHappiness(0.1f);
-                AddPoorPeopleHappiness(-0.3f);
+                AddPoorPeopleHappiness(-0.2f);
             }
             else
             {
-                AddRichPeopleHappiness(-0.3f);
+                AddRichPeopleHappiness(-0.2f);
                 AddPoorPeopleHappiness(0.1f);
             }
         }
@@ -269,7 +271,7 @@ namespace Controllers
             responseWriter.WriteSentence(response);
             
             // sance ze se pri vypovedi pokusi podplatit
-            if (UnityEngine.Random.value < 0.2f)
+            if (UnityEngine.Random.value < 0.25f)
             {
                 onJudgedBribery?.Invoke();
             }
