@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "Ob\u017Ealovan\xFD \u017Ev\xFDk\xE1 moc nahlas."
   FillerWordsList: []
   Biases:
-    poor: -0.1
+    poor: 0.078
     rich: -0.1

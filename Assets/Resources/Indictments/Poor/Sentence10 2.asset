@@ -15,5 +15,5 @@ MonoBehaviour:
   text: "Ob\u017Ealovan\xFD mlask\xE1 u j\xEDdla."
   FillerWordsList: []
   Biases:
-    poor: -0.1
+    poor: 0.071
     rich: -0.1
