@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Response 1
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: No to se teda fakt nestalo!
+  text: Poor
   FillerWordsList: []
   Biases:
-    poor: 0
+    poor: 1
     rich: 0

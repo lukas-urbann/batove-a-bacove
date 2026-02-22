@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: TestOdsouzeni
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Tento odsouzenec ukradl {0} sv\xE9mu sousedovi! "
-  FillerWordsList:
-  - possibleFillTags:
-    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
+  text: Poor1
+  FillerWordsList: []
   Biases:
-    poor: -0.3
-    rich: 0.1
+    poor: 1
+    rich: 0

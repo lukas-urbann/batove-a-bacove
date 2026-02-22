@@ -1121,10 +1121,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5197487415132949900, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
-      propertyPath: workDayTime
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197487415132949900, guid: 91110638f65bfa142bc56b72d7a6b3a7, type: 3}
       propertyPath: responseWriter
       value: 
       objectReference: {fileID: 973718036}
