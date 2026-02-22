@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
-  m_Name: TestOdsouzeni 4
+  m_Name: TestOdsouzeni 9
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Ob\u017Ealovan\xFD sn\u011Bdl sousedovi {0}"
+  text: "Soused zachytil zlod\u011Bje na bezpe\u010Dnostn\xED syst\xE9m, s vysok\xFDm
+    rozli\u0161en\xEDm. Je z\u0159ejm\xE9 \u017Ee ukradl {0}."
   FillerWordsList:
   - possibleFillTags:
-    - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
-    - {fileID: 11400000, guid: 81b74580ac87a6f4eb73c9441e0f0ff5, type: 2}
-    - {fileID: 11400000, guid: 17a317111abca0f489a5eacf39056396, type: 2}
     - {fileID: 11400000, guid: 380517eb8727e6f41a146222e214eccc, type: 2}
+    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
+    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
   Biases:
-    poor: -0.161
-    rich: -0.051
+    poor: 0
+    rich: -0.066

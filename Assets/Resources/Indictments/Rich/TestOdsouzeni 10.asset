@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
+  m_Name: TestOdsouzeni 10
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
+  text: "Dal \u0161enk\xFD\u0159i p\u011Bst\xED, po tom co mu \u0161enk\xFD\u0159
+    dal p\u011Bst\xED."
+  FillerWordsList: []
+  Biases:
+    poor: 0
+    rich: 0
