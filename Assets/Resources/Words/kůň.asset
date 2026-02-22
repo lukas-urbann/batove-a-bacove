@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f7e0749fda7c9d47b94d4661d9f9e9c, type: 3}
-  m_Name: hrad 1
+  m_Name: "k\u016F\u0148"
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueFillWord
   Weight:
-    weight: 1.53
+    weight: 1.41
   Tags:
-  - {fileID: 11400000, guid: a770692f594ba7b4a907b7590fc15f66, type: 2}
+  - {fileID: 11400000, guid: 17a317111abca0f489a5eacf39056396, type: 2}
