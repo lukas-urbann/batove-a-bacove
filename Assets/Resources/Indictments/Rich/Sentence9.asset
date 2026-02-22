@@ -17,5 +17,5 @@ MonoBehaviour:
   - possibleFillTags:
     - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
   Biases:
-    poor: -0.255
-    rich: 0.242
+    poor: -0.3
+    rich: 0.093

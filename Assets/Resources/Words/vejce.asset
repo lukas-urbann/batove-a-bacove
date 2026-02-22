@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: vejce
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueFillWord
   Weight:
-    weight: 1.16
+    weight: 0.278
   Tags:
   - {fileID: 11400000, guid: 81b74580ac87a6f4eb73c9441e0f0ff5, type: 2}
+  - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}

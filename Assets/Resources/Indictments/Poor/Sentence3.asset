@@ -12,17 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Sentence3
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Obvin\u011Bn\xFD je podez\u0159el\xFD, \u017Ee sn\u011Bdl {0} sad {1} z
-    {2}."
+  text: "Obvin\u011Bn\xFD je podez\u0159el\xFD, \u017Ee sn\u011Bdl {0}"
   FillerWordsList:
   - possibleFillTags:
-    - {fileID: 11400000, guid: 091f455f5a8f1e94da106dcb5ea55ed0, type: 2}
-  - possibleFillTags:
     - {fileID: 11400000, guid: 79a9890533333b14da547667102063ca, type: 2}
-  - possibleFillTags:
-    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
-    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
-    - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
   Biases:
-    poor: 0.271
-    rich: -0.226
+    poor: 0.119
+    rich: -0.278

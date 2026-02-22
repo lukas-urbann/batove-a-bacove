@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
   m_Name: Sentence8
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Obvin\u011Bn\xFD byl p\u0159isti\u017Een p\u0159i pokusu sn\xEDst {0}."
+  text: "Obvin\u011Bn\xFD byl p\u0159isti\u017Een p\u0159i pokusu o sn\u011Bzen\xED
+    {0}."
   FillerWordsList:
   - possibleFillTags:
-    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
+    - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
     - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
     - {fileID: 11400000, guid: 36e22c93fecd58f459985a95c9bdddc9, type: 2}
     - {fileID: 11400000, guid: a770692f594ba7b4a907b7590fc15f66, type: 2}
+    - {fileID: 11400000, guid: 17a317111abca0f489a5eacf39056396, type: 2}
   Biases:
-    poor: 0.268
-    rich: -0.22
+    poor: 0
+    rich: 0

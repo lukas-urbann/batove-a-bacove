@@ -20,5 +20,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fe89b84911e906045bf7e9a7b8f066cb, type: 2}
     - {fileID: 11400000, guid: 81b74580ac87a6f4eb73c9441e0f0ff5, type: 2}
   Biases:
-    poor: -0.039
-    rich: -0.1
+    poor: -0.055
+    rich: -0.127

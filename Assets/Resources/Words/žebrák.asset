@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "\u017Eebr\xE1k"
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueFillWord
   Weight:
-    weight: 0.55
+    weight: 0.499
   Tags:
   - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
