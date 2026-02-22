@@ -240,7 +240,7 @@ namespace Controllers
             responseWriter.WriteSentence(response);
             
             // sance ze se pri vypovedi pokusi podplatit
-            if (UnityEngine.Random.value < 1)
+            if (UnityEngine.Random.value < 0.2f)
             {
                 onJudgedBribery?.Invoke();
             }

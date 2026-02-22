@@ -3,8 +3,8 @@ guid: a696cd2e520164f4bbea3f71272eba0b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4627646528341178468
-    second: faze4_hrad_0
+      213: 7504417345437971940
+    second: faze3_hrad_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,11 +100,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: faze4_hrad_0
+      name: faze3_hrad_0
       rect:
         serializedVersion: 2
         x: 8
-        y: 0
+        y: 2
         width: 444
         height: 851
       alignment: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46878dbcff3b83040800000000000000
-      internalID: 4627646528341178468
+      spriteID: 4e53c19c0db052860800000000000000
+      internalID: 7504417345437971940
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      faze4_hrad_0: 4627646528341178468
+      faze3_hrad_0: 7504417345437971940
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
