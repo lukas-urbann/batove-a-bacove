@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f7e0749fda7c9d47b94d4661d9f9e9c, type: 3}
-  m_Name: princ
+  m_Name: med
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueFillWord
   Weight:
-    weight: 2
+    weight: 0.63
   Tags:
-  - {fileID: 11400000, guid: 79a9890533333b14da547667102063ca, type: 2}
+  - {fileID: 11400000, guid: 81b74580ac87a6f4eb73c9441e0f0ff5, type: 2}
