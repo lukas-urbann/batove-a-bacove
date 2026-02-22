@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
+  m_Name: S12
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
+  text: "Pokusil se sn\xEDst {0} po zapit\xED {1}."
+  FillerWordsList:
+  - possibleFillTags:
+    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
+    - {fileID: 11400000, guid: 79a9890533333b14da547667102063ca, type: 2}
+    - {fileID: 11400000, guid: 615f49585de2e8044b586c25c3db08ce, type: 2}
+    - {fileID: 11400000, guid: 3850f04e1924d454b9ec3c9ca1b35b44, type: 2}
+  - possibleFillTags:
+    - {fileID: 11400000, guid: fe89b84911e906045bf7e9a7b8f066cb, type: 2}
+    - {fileID: 11400000, guid: 97d6e30c932761348bcbb989211b1a5e, type: 2}
+  Biases:
+    poor: -0.187
+    rich: 0.134

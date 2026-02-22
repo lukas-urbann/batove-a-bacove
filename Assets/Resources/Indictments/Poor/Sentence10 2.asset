@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8242fd791fd1cb440a66c0cbba90e8d3, type: 3}
-  m_Name: TestOdsouzeni 3
+  m_Name: Sentence10 2
   m_EditorClassIdentifier: Assembly-CSharp::Dialogues.DialogueSentence
-  text: "Bohatej okr\xE1d\xE1"
-  FillerWordsList: []
+  text: "Ob\u017Ealovan\xFD se potloukal okolo {0} p\u0159\xEDli\u0161 dlouh\xFD
+    \u010Das."
+  FillerWordsList:
+  - possibleFillTags:
+    - {fileID: 11400000, guid: a770692f594ba7b4a907b7590fc15f66, type: 2}
   Biases:
-    poor: -0.1
-    rich: 0.1
+    poor: 0.233
+    rich: -0.138
