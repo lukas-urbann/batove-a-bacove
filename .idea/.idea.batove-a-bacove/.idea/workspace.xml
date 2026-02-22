@@ -11,10 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f6a66d4a-f568-4197-8052-4d7550827858" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.batove-a-bacove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Code/UI/RandomizeJudgedImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/UI/RandomizeJudgedImage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/HappinessReaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/HappinessReaction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Code/Interactables/GavelInteractable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/slecna_copata.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/slecna_copata.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

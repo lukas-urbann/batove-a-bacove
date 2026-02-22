@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Controllers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,6 +23,8 @@ public class GavelInteractable : DraggableBase
     private bool _isSmashed;
     private float _previousY;
     private float _dragStartY;
+
+    public bool _isFinalPhase;
 
     private void Update()
     {
@@ -85,17 +88,23 @@ public class GavelInteractable : DraggableBase
     
     protected override bool CanDrag()
     {
-        return !_isSmashed && GameState.Instance.CanGavel();
+        return !_isSmashed && (_isFinalPhase || GameState.Instance.CanGavel());
     }
     
     private bool CanSmash()
     {
         return GameState.Instance.CanGavel();
     }
-    
+
     protected virtual void OnSmash()
     {
-        if (GameState.Instance.CanGavel())
+        if (_isFinalPhase)
+        {
+            AudioManager.Instance.PlayGavelSmash();
+            GameManager.Instance.AddRichPeopleHappiness(0.25f);
+            GameManager.Instance.AddPoorPeopleHappiness(0.25f);
+        }
+        else if (GameState.Instance.CanGavel())
         {
             AudioManager.Instance.PlayGavelSmash();
             GameState.Instance.FinalizeDecision();
@@ -105,6 +114,7 @@ public class GavelInteractable : DraggableBase
         {
             AudioManager.Instance.PlayGavelSmashWeak();
         }
+
         StartCoroutine(ShakeCamera());
         StartCoroutine(SmashDelay());
     }
@@ -112,16 +122,21 @@ public class GavelInteractable : DraggableBase
     protected override void OnHoverEnter()
     {
         if (AnyDragging) return;
-    
-        if (!GameState.Instance.CanGavel())
-            Renderer.color = OriginalColor * invalidColor;
-        else
+
+        if (_isFinalPhase || GameState.Instance.CanGavel())
             Renderer.color = OriginalColor * validColor;
+        else
+            Renderer.color = OriginalColor * invalidColor;
     }
 
     protected override void OnHoverExit()
     {
         if (AnyDragging) return;
         Renderer.color = OriginalColor;
+    }
+    
+    public void SetFinalPhase(bool active)
+    {
+        _isFinalPhase = active;
     }
 }
